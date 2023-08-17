@@ -6,9 +6,9 @@
             <name>LED_5050_RGB</name>
             <creation-uuid>6aaa4354-1e0e-4cb4-b7b6-a1f4a29c1b20</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions/>
+            <c-extensions>c</c-extensions>
             <cpp-extensions/>
-            <header-extensions/>
+            <header-extensions>h</header-extensions>
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
