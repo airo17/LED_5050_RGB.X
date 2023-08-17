@@ -42,6 +42,7 @@
 */
 
 #include "mcc_generated_files/mcc.h"
+#include "RGB_5050.h"
 
 /*
                          Main application
