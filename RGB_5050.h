@@ -50,12 +50,12 @@ extern "C" {
 #include "mcc_generated_files/mcc.h"
 #include <stdint.h>
 
-#define PIN_HIGH    LATBbits.LATB5 = 1
-#define PIN_LOW     LATBbits.LATB5 = 0
+#define PIN_HIGH    LATBbits.LATB5 = 1  //Duration 200 ns
+#define PIN_LOW     LATBbits.LATB5 = 0  //Duration 400 ns
     
-#define T0      PIN_HIGH;PIN_LOW;PIN_LOW;PIN_LOW
-#define T1      PIN_HIGH;PIN_HIGH;PIN_HIGH;PIN_LOW
-#define T_RST   PIN_HIGH;PIN_LOW;__delay_ms(200)
+#define T0      PIN_HIGH;PIN_LOW;PIN_LOW
+#define T1      PIN_HIGH;PIN_HIGH;PIN_HIGH;PIN_HIGH;PIN_LOW
+#define T_RST   PIN_HIGH;PIN_LOW;__delay_us(200)
 
 #define GREEN   0x00FF00
 #define RED     0xFF0000

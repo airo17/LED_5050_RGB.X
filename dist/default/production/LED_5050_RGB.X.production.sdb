@@ -3,25 +3,27 @@
 [d edition pro ]
 [d chip 16F1937 ]
 [d frameptr 6 ]
-"10 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\sprcadd.c
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\Umul8_16.c
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"6 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\pic\__eeprom.c
+"6 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"50 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\main.c
+"50 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"50 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/mcc.c
+"50 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "58
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "72
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
-"55 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/pin_manager.c
+"55 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"1308 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h
+"30 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\RGB_5050.c
+[v _set_led_color set_led_color `(v  1 e 1 0 ]
+"1308 C:\Program Files\Microchip\xc8\v2.36\pic\include\proc\pic16f1937.h
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1370
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
@@ -58,7 +60,7 @@
 [v _LATA LATA `VEuc  1 e 1 @268 ]
 "2414
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-[s S100 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S114 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -68,8 +70,8 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "2431
-[u S109 . 1 `S100 1 . 1 0 ]
-[v _LATBbits LATBbits `VES109  1 e 1 @269 ]
+[u S123 . 1 `S114 1 . 1 0 ]
+[v _LATBbits LATBbits `VES123  1 e 1 @269 ]
 "2476
 [v _LATC LATC `VEuc  1 e 1 @270 ]
 "2538
@@ -94,12 +96,33 @@
 [v _WPUE WPUE `VEuc  1 e 1 @528 ]
 "8883
 [v _PLLR PLLR `VEb  1 e 0 @1238 ]
-"50 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\main.c
+"50 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "77
 } 0
-"50 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/mcc.c
+"30 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\RGB_5050.c
+[v _set_led_color set_led_color `(v  1 e 1 0 ]
+{
+[v set_led_color@number_led number_led `uc  1 a 1 wreg ]
+"51
+[v set_led_color@i_164 i `uc  1 a 1 8 ]
+"42
+[v set_led_color@i_163 i `uc  1 a 1 7 ]
+"33
+[v set_led_color@i i `uc  1 a 1 6 ]
+"32
+[v set_led_color@number_led_choose number_led_choose `uc  1 a 1 5 ]
+"30
+[v set_led_color@number_led number_led `uc  1 a 1 wreg ]
+[v set_led_color@red red `uc  1 p 1 0 ]
+[v set_led_color@green green `uc  1 p 1 1 ]
+[v set_led_color@blue blue `uc  1 p 1 2 ]
+"32
+[v set_led_color@number_led number_led `uc  1 a 1 4 ]
+"61
+} 0
+"50 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "56
@@ -109,12 +132,12 @@
 {
 "76
 } 0
-"55 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/pin_manager.c
+"55 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "101
 } 0
-"58 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/mcc.c
+"58 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "70
