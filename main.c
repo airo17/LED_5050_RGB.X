@@ -66,10 +66,13 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
-
+    
+//    set_led_color(7, 255, 0, 0);
+    
     while (1)
     {
-        // Add your application code
+        LATBbits.LATB5 = 1;
+        LATBbits.LATB5 = 0;
     }
 }
 /**

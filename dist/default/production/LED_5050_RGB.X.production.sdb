@@ -1,0 +1,121 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1937 ]
+[d frameptr 6 ]
+"10 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"50 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"50 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"58
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"72
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"55 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"1308 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1370
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1432
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+"1494
+[v _TRISD TRISD `VEuc  1 e 1 @143 ]
+"1556
+[v _TRISE TRISE `VEuc  1 e 1 @144 ]
+[s S38 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1782
+[s S47 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S52 . 1 `S38 1 . 1 0 `S47 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES52  1 e 1 @149 ]
+"1893
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1952
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"2010
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2352
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"2414
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+[s S100 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"2431
+[u S109 . 1 `S100 1 . 1 0 ]
+[v _LATBbits LATBbits `VES109  1 e 1 @269 ]
+"2476
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"2538
+[v _LATD LATD `VEuc  1 e 1 @271 ]
+"2608
+[v _LATE LATE `VEuc  1 e 1 @272 ]
+"2918
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"3267
+[v _APFCON APFCON `VEuc  1 e 1 @285 ]
+"3323
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"3381
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"3439
+[v _ANSELD ANSELD `VEuc  1 e 1 @399 ]
+"3509
+[v _ANSELE ANSELE `VEuc  1 e 1 @400 ]
+"4058
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"4128
+[v _WPUE WPUE `VEuc  1 e 1 @528 ]
+"8883
+[v _PLLR PLLR `VEb  1 e 0 @1238 ]
+"50 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"77
+} 0
+"50 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"56
+} 0
+"72
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"76
+} 0
+"55 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"101
+} 0
+"58 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"70
+} 0

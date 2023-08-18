@@ -65,6 +65,23 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+// get/set LED_STATUS aliases
+#define LED_STATUS_TRIS                 TRISBbits.TRISB4
+#define LED_STATUS_LAT                  LATBbits.LATB4
+#define LED_STATUS_PORT                 PORTBbits.RB4
+#define LED_STATUS_WPU                  WPUBbits.WPUB4
+#define LED_STATUS_ANS                  ANSELBbits.ANSB4
+#define LED_STATUS_SetHigh()            do { LATBbits.LATB4 = 1; } while(0)
+#define LED_STATUS_SetLow()             do { LATBbits.LATB4 = 0; } while(0)
+#define LED_STATUS_Toggle()             do { LATBbits.LATB4 = ~LATBbits.LATB4; } while(0)
+#define LED_STATUS_GetValue()           PORTBbits.RB4
+#define LED_STATUS_SetDigitalInput()    do { TRISBbits.TRISB4 = 1; } while(0)
+#define LED_STATUS_SetDigitalOutput()   do { TRISBbits.TRISB4 = 0; } while(0)
+#define LED_STATUS_SetPullup()          do { WPUBbits.WPUB4 = 1; } while(0)
+#define LED_STATUS_ResetPullup()        do { WPUBbits.WPUB4 = 0; } while(0)
+#define LED_STATUS_SetAnalogMode()      do { ANSELBbits.ANSB4 = 1; } while(0)
+#define LED_STATUS_SetDigitalMode()     do { ANSELBbits.ANSB4 = 0; } while(0)
+
 // get/set PIN_LEDS aliases
 #define PIN_LEDS_TRIS                 TRISBbits.TRISB5
 #define PIN_LEDS_LAT                  LATBbits.LATB5

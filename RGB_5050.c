@@ -27,10 +27,10 @@
 
 /* TODO:  Include other files here if needed. */
 
-void set_led_color(uint32_t number_led, uint8_t red, uint8_t green,  uint8_t blue){
+void set_led_color(uint8_t number_led, uint8_t red, uint8_t green,  uint8_t blue){
     
-    for(uint32_t number_led_choose = 1; number_led_choose <= number_led; number_led_choose++){
-        for(uint32_t i = 0; i != 8; i++){
+    for(uint8_t number_led_choose = 1; number_led_choose <= number_led; number_led_choose++){
+        for(uint8_t i = 0; i != 8; i++){
             if(green & (0b00000001 << i)){
                 T1;
             }
@@ -39,7 +39,7 @@ void set_led_color(uint32_t number_led, uint8_t red, uint8_t green,  uint8_t blu
             }
         }
 
-        for(uint32_t i = 0; i != 8; i++){
+        for(uint8_t i = 0; i != 8; i++){
             if(red & (0b00000001 << i)){
                 T1;
             }
@@ -48,7 +48,7 @@ void set_led_color(uint32_t number_led, uint8_t red, uint8_t green,  uint8_t blu
             }
         }
 
-        for(uint32_t i = 0; i != 8; i++){
+        for(uint8_t i = 0; i != 8; i++){
             if(blue & (0b00000001 << i)){
                 T1;
             }
@@ -60,10 +60,10 @@ void set_led_color(uint32_t number_led, uint8_t red, uint8_t green,  uint8_t blu
     T_RST; 
 }
 
-void set_strip_led_color(uint32_t number_led, color_led *COLOR_LED){
+void set_strip_led_color(uint8_t number_led, color_led *COLOR_LED){
     
-    for(uint32_t number_led_choose = 1; number_led_choose <= number_led; number_led_choose++){
-        for(uint32_t i = 0; i != 8; i++){
+    for(uint8_t number_led_choose = 1; number_led_choose <= number_led; number_led_choose++){
+        for(uint8_t i = 0; i != 8; i++){
             if(COLOR_LED[number_led_choose - 1].RGB.green & (0b00000001 << i)){
                 T1;
             }
@@ -72,7 +72,7 @@ void set_strip_led_color(uint32_t number_led, color_led *COLOR_LED){
             }
         }
 
-        for(uint32_t i = 0; i != 8; i++){
+        for(uint8_t i = 0; i != 8; i++){
             if(COLOR_LED[number_led_choose - 1].RGB.red & (0b00000001 << i)){
                 T1;
             }
@@ -81,7 +81,7 @@ void set_strip_led_color(uint32_t number_led, color_led *COLOR_LED){
             }
         }
 
-        for(uint32_t i = 0; i != 8; i++){
+        for(uint8_t i = 0; i != 8; i++){
             if(COLOR_LED[number_led_choose - 1].RGB.blue & (0b00000001 << i)){
                 T1;
             }

@@ -49,10 +49,13 @@ extern "C" {
 
 #include "mcc_generated_files/mcc.h"
 #include <stdint.h>
+
+#define PIN_HIGH    LATBbits.LATB5 = 1
+#define PIN_LOW     LATBbits.LATB5 = 0
     
-#define T0      P_TEST_Set();P_TEST_Clear();P_TEST_Clear();P_TEST_Clear()
-#define T1      P_TEST_Set();P_TEST_Set();P_TEST_Set();P_TEST_Clear()
-#define T_RST   P_TEST_Set();P_TEST_Clear();for(uint32_t i = 0; i < 800; i++)
+#define T0      PIN_HIGH;PIN_LOW;PIN_LOW;PIN_LOW
+#define T1      PIN_HIGH;PIN_HIGH;PIN_HIGH;PIN_LOW
+#define T_RST   PIN_HIGH;PIN_LOW;__delay_ms(200)
 
 #define GREEN   0x00FF00
 #define RED     0xFF0000
@@ -68,8 +71,8 @@ typedef union {
     uint32_t RGB_COLOR;
 }color_led;
     
-void set_led_color(uint32_t number_led, uint8_t green, uint8_t red, uint8_t blue);
-void set_strip_led_color(uint32_t number_led, color_led *COLOR_LED);
+void set_led_color(uint8_t number_led, uint8_t green, uint8_t red, uint8_t blue);
+void set_strip_led_color(uint8_t number_led, color_led *COLOR_LED);
 //    /* ************************************************************************** */
 //    /** Descriptive Constant Name
 //
