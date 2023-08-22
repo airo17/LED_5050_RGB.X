@@ -5390,9 +5390,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 128 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
 # 140 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 152 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -5554,6 +5554,9 @@ char *tempnam(const char *, const char *);
 # 7 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\conio.h" 2 3
 # 54 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 55 "./mcc_generated_files/mcc.h" 2
+
 # 1 "./mcc_generated_files/i2c_master.h" 1
 # 58 "./mcc_generated_files/i2c_master.h"
 typedef enum {
@@ -5618,12 +5621,54 @@ void I2C_SetAddressNackCallback(i2c_callback_t cb, void *ptr);
 void I2C_SetDataNackCallback(i2c_callback_t cb, void *ptr);
 # 204 "./mcc_generated_files/i2c_master.h"
 void I2C_SetTimeoutCallback(i2c_callback_t cb, void *ptr);
-# 55 "./mcc_generated_files/mcc.h" 2
-# 70 "./mcc_generated_files/mcc.h"
+# 56 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr1.h" 1
+# 100 "./mcc_generated_files/tmr1.h"
+void TMR1_Initialize(void);
+# 129 "./mcc_generated_files/tmr1.h"
+void TMR1_StartTimer(void);
+# 161 "./mcc_generated_files/tmr1.h"
+void TMR1_StopTimer(void);
+# 196 "./mcc_generated_files/tmr1.h"
+uint16_t TMR1_ReadTimer(void);
+# 235 "./mcc_generated_files/tmr1.h"
+void TMR1_WriteTimer(uint16_t timerVal);
+# 271 "./mcc_generated_files/tmr1.h"
+void TMR1_Reload(void);
+# 310 "./mcc_generated_files/tmr1.h"
+void TMR1_StartSinglePulseAcquisition(void);
+# 349 "./mcc_generated_files/tmr1.h"
+uint8_t TMR1_CheckGateValueStatus(void);
+# 367 "./mcc_generated_files/tmr1.h"
+void TMR1_ISR(void);
+# 385 "./mcc_generated_files/tmr1.h"
+ void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 403 "./mcc_generated_files/tmr1.h"
+extern void (*TMR1_InterruptHandler)(void);
+# 421 "./mcc_generated_files/tmr1.h"
+void TMR1_DefaultInterruptHandler(void);
+# 57 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/ext_int.h" 1
+# 250 "./mcc_generated_files/ext_int.h"
+void EXT_INT_Initialize(void);
+# 272 "./mcc_generated_files/ext_int.h"
+void INT_ISR(void);
+# 296 "./mcc_generated_files/ext_int.h"
+void INT_CallBack(void);
+# 319 "./mcc_generated_files/ext_int.h"
+void INT_SetInterruptHandler(void (* InterruptHandler)(void));
+# 343 "./mcc_generated_files/ext_int.h"
+extern void (*INT_InterruptHandler)(void);
+# 367 "./mcc_generated_files/ext_int.h"
+void INT_DefaultInterruptHandler(void);
+# 58 "./mcc_generated_files/mcc.h" 2
+# 73 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 83 "./mcc_generated_files/mcc.h"
+# 86 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 95 "./mcc_generated_files/mcc.h"
+# 98 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 44 "main.c" 2
 
@@ -6056,9 +6101,47 @@ _Bool check_communication_BMP180(void);
 # 46 "main.c" 2
 
 
+
+
+
+
 color_led COLOR_LED[16];
 _Bool status_communication = 0;
 BMP_180 DATA_BMP_180;
+uint16_t time_out_timer = 0;
+
+
+void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
+{
+
+    if(INTCONbits.INTE == 1 && INTCONbits.INTF == 1)
+    {
+        INT_ISR();
+        LATBbits.LATB4 ^= 1;
+    }
+    else if(INTCONbits.PEIE == 1)
+    {
+        if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
+        {
+            TMR1_ISR();
+            if(time_out_timer >= 1000){
+                LATBbits.LATB4 ^= 1;
+                time_out_timer = 0;
+            }
+            else{
+                time_out_timer++;
+            }
+        }
+        else
+        {
+
+        }
+    }
+    else
+    {
+
+    }
+}
 
 
 
@@ -6066,43 +6149,12 @@ void main(void)
 {
 
     SYSTEM_Initialize();
-# 74 "main.c"
+# 112 "main.c"
     _delay((unsigned long)((1000)*(32000000/4000.0)));
-    LATBbits.LATB4 = 1;
-
-
-
-
-    COLOR_LED[3].rgb_color = 0xFFFFFF;
-
-
-
-    COLOR_LED[7].rgb_color = 0xFFFFFF;
-
-
-
-    COLOR_LED[11].rgb_color = 0xFFFFFF;
-
-
-
-    COLOR_LED[15].rgb_color = 0xFFFFFF;
-
-    set_strip_led_color(16, COLOR_LED);
-
-
-
-    DATA_BMP_180.CALIBRATION_DATA = get_calibration_data_BMP180();
-
+    LATBbits.LATB4 = 0;
+# 138 "main.c"
     while (1)
     {
-
-
-
-
-
-        DATA_BMP_180.temperature = get_temperature_BMP180();
-        _delay((unsigned long)((5000)*(32000000/4000.0)));
-
-
+# 149 "main.c"
     }
 }

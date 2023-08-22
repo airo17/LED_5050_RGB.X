@@ -60,7 +60,7 @@ extern "C" {
 #define GREEN   0x00FF00
 #define RED     0xFF0000
 #define BLUE    0x0000FF
-#define LED_OFF 0x000000    
+#define OFF     0x000000    
     
 typedef union {
     struct rgb {

@@ -557,8 +557,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _get_calibration_data_BMP180 ]
 [f ]
-[v F3834 `uc ~T0 @X0 -> 22 `i s ]
-[i F3834
+[v F3861 `uc ~T0 @X0 -> 22 `i s ]
+[i F3861
 :U ..
 "29
 [; ;BMP_180.c: 29:     uint8_t buffer_I2C[22] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -587,7 +587,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer_I2C `uc ~T0 @X0 -> 22 `i a ]
-[e = _buffer_I2C F3834 ]
+[e = _buffer_I2C F3861 ]
 "32
 [; ;BMP_180.c: 32:     I2C_ReadDataBlock(0x77, 0xAA, &buffer_I2C[0], 22);
 [e ( _I2C_ReadDataBlock (4 , , , -> -> 119 `i `uc -> -> 170 `i `uc &U *U + &U _buffer_I2C * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux -> -> 22 `i `ui ]
@@ -740,8 +740,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;BMP_180.c: 82:     int32_t p = 0;
 [v _p `l ~T0 @X0 1 a ]
 [e = _p -> -> 0 `i `l ]
-[v F3852 `uc ~T0 @X0 -> 6 `i s ]
-[i F3852
+[v F3879 `uc ~T0 @X0 -> 6 `i s ]
+[i F3879
 :U ..
 "83
 [; ;BMP_180.c: 83:     uint8_t buffer_I2C[6] = {0xF4, (0x34 + (mode_oversampling_setting << 6)),
@@ -754,7 +754,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer_I2C `uc ~T0 @X0 -> 6 `i a ]
-[e = _buffer_I2C F3852 ]
+[e = _buffer_I2C F3879 ]
 [e ; = *U + &U _buffer_I2C * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux -> -> 244 `i `uc ; = *U + &U _buffer_I2C * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux -> + -> 52 `i << -> _mode_oversampling_setting `i -> 6 `i `uc ; = *U + &U _buffer_I2C * -> -> -> 2 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux -> -> 246 `i `uc ; = *U + &U _buffer_I2C * -> -> -> 3 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux -> -> 0 `i `uc = *U + &U _buffer_I2C * -> -> -> 4 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux -> -> 0 `i `uc ]
 "91
 [; ;BMP_180.c: 91:     uncompensated_pressure = ((buffer_I2C[3] << 16) | (buffer_I2C[4] << 8) | buffer_I2C[5]) >> (8 - mode_oversampling_setting);

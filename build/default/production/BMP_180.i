@@ -5629,9 +5629,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/examples/../pin_manager.h" 1
-# 128 "./mcc_generated_files/examples/../pin_manager.h"
-void PIN_MANAGER_Initialize (void);
 # 140 "./mcc_generated_files/examples/../pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 152 "./mcc_generated_files/examples/../pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -5639,11 +5639,57 @@ void PIN_MANAGER_IOC(void);
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c99\\conio.h" 1 3
 # 54 "./mcc_generated_files/mcc.h" 2
-# 70 "./mcc_generated_files/mcc.h"
+
+# 1 "./mcc_generated_files/examples/../interrupt_manager.h" 1
+# 55 "./mcc_generated_files/mcc.h" 2
+
+
+# 1 "./mcc_generated_files/examples/../tmr1.h" 1
+# 100 "./mcc_generated_files/examples/../tmr1.h"
+void TMR1_Initialize(void);
+# 129 "./mcc_generated_files/examples/../tmr1.h"
+void TMR1_StartTimer(void);
+# 161 "./mcc_generated_files/examples/../tmr1.h"
+void TMR1_StopTimer(void);
+# 196 "./mcc_generated_files/examples/../tmr1.h"
+uint16_t TMR1_ReadTimer(void);
+# 235 "./mcc_generated_files/examples/../tmr1.h"
+void TMR1_WriteTimer(uint16_t timerVal);
+# 271 "./mcc_generated_files/examples/../tmr1.h"
+void TMR1_Reload(void);
+# 310 "./mcc_generated_files/examples/../tmr1.h"
+void TMR1_StartSinglePulseAcquisition(void);
+# 349 "./mcc_generated_files/examples/../tmr1.h"
+uint8_t TMR1_CheckGateValueStatus(void);
+# 367 "./mcc_generated_files/examples/../tmr1.h"
+void TMR1_ISR(void);
+# 385 "./mcc_generated_files/examples/../tmr1.h"
+ void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 403 "./mcc_generated_files/examples/../tmr1.h"
+extern void (*TMR1_InterruptHandler)(void);
+# 421 "./mcc_generated_files/examples/../tmr1.h"
+void TMR1_DefaultInterruptHandler(void);
+# 57 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/examples/../ext_int.h" 1
+# 250 "./mcc_generated_files/examples/../ext_int.h"
+void EXT_INT_Initialize(void);
+# 272 "./mcc_generated_files/examples/../ext_int.h"
+void INT_ISR(void);
+# 296 "./mcc_generated_files/examples/../ext_int.h"
+void INT_CallBack(void);
+# 319 "./mcc_generated_files/examples/../ext_int.h"
+void INT_SetInterruptHandler(void (* InterruptHandler)(void));
+# 343 "./mcc_generated_files/examples/../ext_int.h"
+extern void (*INT_InterruptHandler)(void);
+# 367 "./mcc_generated_files/examples/../ext_int.h"
+void INT_DefaultInterruptHandler(void);
+# 58 "./mcc_generated_files/mcc.h" 2
+# 73 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 83 "./mcc_generated_files/mcc.h"
+# 86 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 95 "./mcc_generated_files/mcc.h"
+# 98 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 40 "./BMP_180.h" 2
 

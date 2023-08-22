@@ -45,9 +45,47 @@
 #include "RGB_5050.h"
 #include "BMP_180.h"
 
+#define LED_ON  LATBbits.LATB4 = 1
+#define LED_OFF LATBbits.LATB4 = 0
+#define LED_TOGGLE LATBbits.LATB4 ^= 1
+
 color_led COLOR_LED[16];
 bool status_communication = false;
 BMP_180 DATA_BMP_180;
+uint16_t time_out_timer = 0;
+
+// Interrupts
+void __interrupt() INTERRUPT_InterruptManager (void)
+{
+    // interrupt handler
+    if(INTCONbits.INTE == 1 && INTCONbits.INTF == 1)
+    {
+        INT_ISR();
+        LED_TOGGLE;
+    }
+    else if(INTCONbits.PEIE == 1)
+    {
+        if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
+        {
+            TMR1_ISR();
+            if(time_out_timer >= 1000){
+                LED_TOGGLE;
+                time_out_timer = 0;
+            }
+            else{
+                time_out_timer++;
+            }
+        } 
+        else
+        {
+            //Unhandled Interrupt
+        }
+    }      
+    else
+    {
+        //Unhandled Interrupt
+    }
+}
 /*
                          Main application
  */
@@ -72,30 +110,30 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
     
     __delay_ms(1000);
-    LATBbits.LATB4 = 1;
+    LED_OFF;
     
 //    COLOR_LED[0].RGB.red = 255;
 //    COLOR_LED[1].RGB.red = 255;
 //    COLOR_LED[2].RGB.red = 255;
-    COLOR_LED[3].rgb_color = 0xFFFFFF;
-//    COLOR_LED[4].RGB.red = 255;
-//    COLOR_LED[5].RGB.green = 255;
-//    COLOR_LED[6].RGB.green = 255;
-    COLOR_LED[7].rgb_color = 0xFFFFFF;
-//    COLOR_LED[8].RGB.green = 255;
-//    COLOR_LED[9].RGB.green = 255;
-//    COLOR_LED[10].RGB.green = 255;
-    COLOR_LED[11].rgb_color = 0xFFFFFF;
-//    COLOR_LED[12].RGB.blue = 255;
-//    COLOR_LED[13].RGB.blue = 255;
-//    COLOR_LED[14].RGB.blue = 255;
-    COLOR_LED[15].rgb_color = 0xFFFFFF;
+//    COLOR_LED[3].rgb_color = 0xFFFFFF;
+////    COLOR_LED[4].RGB.red = 255;
+////    COLOR_LED[5].RGB.green = 255;
+////    COLOR_LED[6].RGB.green = 255;
+//    COLOR_LED[7].rgb_color = 0xFFFFFF;
+////    COLOR_LED[8].RGB.green = 255;
+////    COLOR_LED[9].RGB.green = 255;
+////    COLOR_LED[10].RGB.green = 255;
+//    COLOR_LED[11].rgb_color = 0xFFFFFF;
+////    COLOR_LED[12].RGB.blue = 255;
+////    COLOR_LED[13].RGB.blue = 255;
+////    COLOR_LED[14].RGB.blue = 255;
+//    COLOR_LED[15].rgb_color = 0xFFFFFF;
+////    
+//    set_strip_led_color(16, COLOR_LED);
 //    
-    set_strip_led_color(16, COLOR_LED);
-    
-//    set_led_color(16, 0, 0, 0);
-    
-    DATA_BMP_180.CALIBRATION_DATA = get_calibration_data_BMP180();
+////    set_led_color(16, 0, 0, 0);
+//    
+//    DATA_BMP_180.CALIBRATION_DATA = get_calibration_data_BMP180();
     
     while (1)
     {
@@ -104,8 +142,8 @@ void main(void)
 //            set_led_color(1, 0, 255, 0);
 //        }
         
-        DATA_BMP_180.temperature = get_temperature_BMP180();
-        __delay_ms(5000);
+//        DATA_BMP_180.temperature = get_temperature_BMP180();
+//        __delay_ms(5000);
 //        LATBbits.LATB5 = 1;
 //        LATBbits.LATB5 = 0;
     }

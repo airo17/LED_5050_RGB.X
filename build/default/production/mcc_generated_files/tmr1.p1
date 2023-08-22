@@ -1,28 +1,79 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"61 ./BMP_180.h
-[; ;./BMP_180.h: 61: typedef struct{
-[s S384 `s 1 `s 1 `s 1 `us 1 `us 1 `us 1 `s 1 `s 1 `l 1 `s 1 `s 1 `s 1 ]
-[n S384 . AC1 AC2 AC3 AC4 AC5 AC6 B1 B2 B5 MB MC MD ]
-"76
-[; ;./BMP_180.h: 76: typedef struct{
-[s S385 `l 1 `l 1 `S384 1 ]
-[n S385 . temperature pressure CALIBRATION_DATA ]
-"60 ./mcc_generated_files/examples/i2c_master_example.h
-[; ;./mcc_generated_files/examples/i2c_master_example.h: 60: void I2C_ReadDataBlock(i2c_address_t address, uint8_t reg, uint8_t *data, size_t len);
-[v _I2C_ReadDataBlock `(v ~T0 @X0 0 ef4`uc`uc`*uc`ui ]
-"56
-[; ;./mcc_generated_files/examples/i2c_master_example.h: 56: void I2C_Write1ByteRegister(i2c_address_t address, uint8_t reg, uint8_t data);
-[v _I2C_Write1ByteRegister `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-[v F609 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\builtins.h
-[v __delay `JF609 ~T0 @X0 0 e ]
-[p i __delay ]
-"55 ./mcc_generated_files/examples/i2c_master_example.h
-[; ;./mcc_generated_files/examples/i2c_master_example.h: 55: uint16_t I2C_Read2ByteRegister(i2c_address_t address, uint8_t reg);
-[v _I2C_Read2ByteRegister `(us ~T0 @X0 0 ef2`uc`uc ]
-"54
-[; ;./mcc_generated_files/examples/i2c_master_example.h: 54: uint8_t I2C_Read1ByteRegister(i2c_address_t address, uint8_t reg);
-[v _I2C_Read1ByteRegister `(uc ~T0 @X0 0 ef2`uc`uc ]
+[v F2981 `(v ~T0 @X0 0 tf ]
+"1020 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 1020: extern volatile unsigned char T1GCON __attribute__((address(0x019)));
+[v _T1GCON `Vuc ~T0 @X0 0 e@25 ]
+"928
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 928: extern volatile unsigned char TMR1H __attribute__((address(0x017)));
+[v _TMR1H `Vuc ~T0 @X0 0 e@23 ]
+"908
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 908: extern volatile unsigned char TMR1L __attribute__((address(0x016)));
+[v _TMR1L `Vuc ~T0 @X0 0 e@22 ]
+"722
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 722:     struct {
+[s S44 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S44 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF TMR1GIF ]
+"721
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 721: typedef union {
+[u S43 `S44 1 ]
+[n S43 . . ]
+"733
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 733: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x011)));
+[v _PIR1bits `VS43 ~T0 @X0 0 e@17 ]
+"1600
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 1600:     struct {
+[s S85 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S85 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE TMR1GIE ]
+"1599
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 1599: typedef union {
+[u S84 `S85 1 ]
+[n S84 . . ]
+"1611
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 1611: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x091)));
+[v _PIE1bits `VS84 ~T0 @X0 0 e@145 ]
+[v F2973 `(v ~T0 @X0 0 tf ]
+"385 mcc_generated_files/tmr1.h
+[; ;mcc_generated_files/tmr1.h: 385:  void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _TMR1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2973 ]
+"421
+[; ;mcc_generated_files/tmr1.h: 421: void TMR1_DefaultInterruptHandler(void);
+[v _TMR1_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
+"948 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 948: extern volatile unsigned char T1CON __attribute__((address(0x018)));
+[v _T1CON `Vuc ~T0 @X0 0 e@24 ]
+"954
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 954:     struct {
+[s S56 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S56 . TMR1ON . nT1SYNC T1OSCEN T1CKPS0 T1CKPS1 TMR1CS0 TMR1CS1 ]
+"964
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 964:     struct {
+[s S57 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S57 . . T1CKPS TMR1CS ]
+"953
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 953: typedef union {
+[u S55 `S56 1 `S57 1 ]
+[n S55 . . . ]
+"970
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 970: extern volatile T1CONbits_t T1CONbits __attribute__((address(0x018)));
+[v _T1CONbits `VS55 ~T0 @X0 0 e@24 ]
+"1026
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 1026:     struct {
+[s S59 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S59 . T1GSS0 T1GSS1 T1GVAL T1GGO_nDONE T1GSPM T1GTM T1GPOL TMR1GE ]
+"1036
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 1036:     struct {
+[s S60 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S60 . T1GSS . T1GGO ]
+"1025
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 1025: typedef union {
+[u S58 `S59 1 `S60 1 ]
+[n S58 . . . ]
+"1042
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 1042: extern volatile T1GCONbits_t T1GCONbits __attribute__((address(0x019)));
+[v _T1GCONbits `VS58 ~T0 @X0 0 e@25 ]
+[v F2996 `(v ~T0 @X0 0 tf ]
+[v F2998 `(v ~T0 @X0 0 tf ]
+[v F3000 `(v ~T0 @X0 0 tf ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -548,346 +599,265 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7835
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h: 7835: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"26 BMP_180.c
-[; ;BMP_180.c: 26: static BMP_180 BMP180;
-[v _BMP180 `S385 ~T0 @X0 1 s ]
-"28
-[; ;BMP_180.c: 28: calibration_data_BMP180 get_calibration_data_BMP180(void){
-[v _get_calibration_data_BMP180 `(S384 ~T0 @X0 1 ef ]
-{
-[e :U _get_calibration_data_BMP180 ]
-[f ]
-[v F3834 `uc ~T0 @X0 -> 22 `i s ]
-[i F3834
-:U ..
-"29
-[; ;BMP_180.c: 29:     uint8_t buffer_I2C[22] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
-..
-]
-[v _buffer_I2C `uc ~T0 @X0 -> 22 `i a ]
-[e = _buffer_I2C F3834 ]
-"32
-[; ;BMP_180.c: 32:     I2C_ReadDataBlock(0x77, 0xAA, &buffer_I2C[0], 22);
-[e ( _I2C_ReadDataBlock (4 , , , -> -> 119 `i `uc -> -> 170 `i `uc &U *U + &U _buffer_I2C * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux -> -> 22 `i `ui ]
-"34
-[; ;BMP_180.c: 34:     BMP180.CALIBRATION_DATA.AC1 = (buffer_I2C[0] << 8) | buffer_I2C[1];
-[e = . . _BMP180 2 0 -> | << -> *U + &U _buffer_I2C * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i -> 8 `i -> *U + &U _buffer_I2C * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i `s ]
-"35
-[; ;BMP_180.c: 35:     BMP180.CALIBRATION_DATA.AC2 = (buffer_I2C[2] << 8) | buffer_I2C[3];
-[e = . . _BMP180 2 1 -> | << -> *U + &U _buffer_I2C * -> -> -> 2 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i -> 8 `i -> *U + &U _buffer_I2C * -> -> -> 3 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i `s ]
-"36
-[; ;BMP_180.c: 36:     BMP180.CALIBRATION_DATA.AC3 = (buffer_I2C[4] << 8) | buffer_I2C[5];
-[e = . . _BMP180 2 2 -> | << -> *U + &U _buffer_I2C * -> -> -> 4 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i -> 8 `i -> *U + &U _buffer_I2C * -> -> -> 5 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i `s ]
-"37
-[; ;BMP_180.c: 37:     BMP180.CALIBRATION_DATA.AC4 = (buffer_I2C[6] << 8) | buffer_I2C[7];
-[e = . . _BMP180 2 3 -> | << -> *U + &U _buffer_I2C * -> -> -> 6 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i -> 8 `i -> *U + &U _buffer_I2C * -> -> -> 7 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i `us ]
-"38
-[; ;BMP_180.c: 38:     BMP180.CALIBRATION_DATA.AC5 = (buffer_I2C[8] << 8) | buffer_I2C[9];
-[e = . . _BMP180 2 4 -> | << -> *U + &U _buffer_I2C * -> -> -> 8 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i -> 8 `i -> *U + &U _buffer_I2C * -> -> -> 9 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i `us ]
-"39
-[; ;BMP_180.c: 39:     BMP180.CALIBRATION_DATA.AC6 = (buffer_I2C[10] << 8) | buffer_I2C[11];
-[e = . . _BMP180 2 5 -> | << -> *U + &U _buffer_I2C * -> -> -> 10 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i -> 8 `i -> *U + &U _buffer_I2C * -> -> -> 11 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i `us ]
-"40
-[; ;BMP_180.c: 40:     BMP180.CALIBRATION_DATA.B1 = (buffer_I2C[12] << 8) | buffer_I2C[13];
-[e = . . _BMP180 2 6 -> | << -> *U + &U _buffer_I2C * -> -> -> 12 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i -> 8 `i -> *U + &U _buffer_I2C * -> -> -> 13 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i `s ]
-"41
-[; ;BMP_180.c: 41:     BMP180.CALIBRATION_DATA.B2 = (buffer_I2C[14] << 8) | buffer_I2C[15];
-[e = . . _BMP180 2 7 -> | << -> *U + &U _buffer_I2C * -> -> -> 14 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i -> 8 `i -> *U + &U _buffer_I2C * -> -> -> 15 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i `s ]
-"42
-[; ;BMP_180.c: 42:     BMP180.CALIBRATION_DATA.MB = (buffer_I2C[16] << 8) | buffer_I2C[17];
-[e = . . _BMP180 2 9 -> | << -> *U + &U _buffer_I2C * -> -> -> 16 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i -> 8 `i -> *U + &U _buffer_I2C * -> -> -> 17 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i `s ]
-"43
-[; ;BMP_180.c: 43:     BMP180.CALIBRATION_DATA.MC = (buffer_I2C[18] << 8) | buffer_I2C[19];
-[e = . . _BMP180 2 10 -> | << -> *U + &U _buffer_I2C * -> -> -> 18 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i -> 8 `i -> *U + &U _buffer_I2C * -> -> -> 19 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i `s ]
-"44
-[; ;BMP_180.c: 44:     BMP180.CALIBRATION_DATA.MD = (buffer_I2C[20] << 8) | buffer_I2C[21];
-[e = . . _BMP180 2 11 -> | << -> *U + &U _buffer_I2C * -> -> -> 20 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i -> 8 `i -> *U + &U _buffer_I2C * -> -> -> 21 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i `s ]
-"46
-[; ;BMP_180.c: 46:     return BMP180.CALIBRATION_DATA;
-[e ) . _BMP180 2 ]
-[e $UE 386  ]
-"47
-[; ;BMP_180.c: 47: }
-[e :UE 386 ]
-}
-"49
-[; ;BMP_180.c: 49: int32_t get_temperature_BMP180(void){
-[v _get_temperature_BMP180 `(l ~T0 @X0 1 ef ]
-{
-[e :U _get_temperature_BMP180 ]
-[f ]
-"50
-[; ;BMP_180.c: 50:     int32_t x1 = 0;
-[v _x1 `l ~T0 @X0 1 a ]
-[e = _x1 -> -> 0 `i `l ]
-"51
-[; ;BMP_180.c: 51:     int32_t x2 = 0;
-[v _x2 `l ~T0 @X0 1 a ]
-[e = _x2 -> -> 0 `i `l ]
-"52
-[; ;BMP_180.c: 52:     int32_t t = 0;
-[v _t `l ~T0 @X0 1 a ]
-[e = _t -> -> 0 `i `l ]
-"53
-[; ;BMP_180.c: 53:     int32_t uncompensated_temperature = 0;
-[v _uncompensated_temperature `l ~T0 @X0 1 a ]
-[e = _uncompensated_temperature -> -> 0 `i `l ]
-"55
-[; ;BMP_180.c: 55:     I2C_Write1ByteRegister(0x77, 0xF4, 0x2E);
-[e ( _I2C_Write1ByteRegister (3 , , -> -> 119 `i `uc -> -> 244 `i `uc -> -> 46 `i `uc ]
-"56
-[; ;BMP_180.c: 56:     _delay((unsigned long)((4500)*(32000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 4500 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"57
-[; ;BMP_180.c: 57:     uncompensated_temperature = I2C_Read2ByteRegister(0x77, 0xF6);
-[e = _uncompensated_temperature -> ( _I2C_Read2ByteRegister (2 , -> -> 119 `i `uc -> -> 246 `i `uc `l ]
-"59
-[; ;BMP_180.c: 59:     x1 = ((uncompensated_temperature - BMP180.CALIBRATION_DATA.AC6) * BMP180.CALIBRATION_DATA.AC5) >> 15;
-[e = _x1 >> * - _uncompensated_temperature -> . . _BMP180 2 5 `l -> . . _BMP180 2 4 `l -> 15 `i ]
-"61
-[; ;BMP_180.c: 61:     if ((x1 == 0) && (BMP180.CALIBRATION_DATA.MD == 0))
-[e $ ! && == _x1 -> -> 0 `i `l == -> . . _BMP180 2 11 `i -> 0 `i 388  ]
-"62
-[; ;BMP_180.c: 62:     {
-{
-"63
-[; ;BMP_180.c: 63:         return 0;
-[e ) -> -> 0 `i `l ]
-[e $UE 387  ]
+"57 mcc_generated_files/tmr1.c
+[; ;mcc_generated_files/tmr1.c: 57: volatile uint16_t timer1ReloadVal;
+[v _timer1ReloadVal `Vus ~T0 @X0 1 e ]
+"58
+[; ;mcc_generated_files/tmr1.c: 58: void (*TMR1_InterruptHandler)(void);
+[v _TMR1_InterruptHandler `*F2981 ~T0 @X0 1 e ]
 "64
-[; ;BMP_180.c: 64:     }
+[; ;mcc_generated_files/tmr1.c: 64: void TMR1_Initialize(void)
+[v _TMR1_Initialize `(v ~T0 @X0 1 ef ]
+"65
+[; ;mcc_generated_files/tmr1.c: 65: {
+{
+[e :U _TMR1_Initialize ]
+[f ]
+"69
+[; ;mcc_generated_files/tmr1.c: 69:     T1GCON = 0x00;
+[e = _T1GCON -> -> 0 `i `uc ]
+"72
+[; ;mcc_generated_files/tmr1.c: 72:     TMR1H = 0x15;
+[e = _TMR1H -> -> 21 `i `uc ]
+"75
+[; ;mcc_generated_files/tmr1.c: 75:     TMR1L = 0xA0;
+[e = _TMR1L -> -> 160 `i `uc ]
+"78
+[; ;mcc_generated_files/tmr1.c: 78:     PIR1bits.TMR1IF = 0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"81
+[; ;mcc_generated_files/tmr1.c: 81:     timer1ReloadVal=(uint16_t)((TMR1H << 8) | TMR1L);
+[e = _timer1ReloadVal -> | << -> _TMR1H `i -> 8 `i -> _TMR1L `i `us ]
+"84
+[; ;mcc_generated_files/tmr1.c: 84:     PIE1bits.TMR1IE = 1;
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+"87
+[; ;mcc_generated_files/tmr1.c: 87:     TMR1_SetInterruptHandler(TMR1_DefaultInterruptHandler);
+[e ( _TMR1_SetInterruptHandler (1 &U _TMR1_DefaultInterruptHandler ]
+"90
+[; ;mcc_generated_files/tmr1.c: 90:     T1CON = 0x31;
+[e = _T1CON -> -> 49 `i `uc ]
+"91
+[; ;mcc_generated_files/tmr1.c: 91: }
+[e :UE 382 ]
+}
+"93
+[; ;mcc_generated_files/tmr1.c: 93: void TMR1_StartTimer(void)
+[v _TMR1_StartTimer `(v ~T0 @X0 1 ef ]
+"94
+[; ;mcc_generated_files/tmr1.c: 94: {
+{
+[e :U _TMR1_StartTimer ]
+[f ]
+"96
+[; ;mcc_generated_files/tmr1.c: 96:     T1CONbits.TMR1ON = 1;
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+"97
+[; ;mcc_generated_files/tmr1.c: 97: }
+[e :UE 383 ]
+}
+"99
+[; ;mcc_generated_files/tmr1.c: 99: void TMR1_StopTimer(void)
+[v _TMR1_StopTimer `(v ~T0 @X0 1 ef ]
+"100
+[; ;mcc_generated_files/tmr1.c: 100: {
+{
+[e :U _TMR1_StopTimer ]
+[f ]
+"102
+[; ;mcc_generated_files/tmr1.c: 102:     T1CONbits.TMR1ON = 0;
+[e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
+"103
+[; ;mcc_generated_files/tmr1.c: 103: }
+[e :UE 384 ]
+}
+"105
+[; ;mcc_generated_files/tmr1.c: 105: uint16_t TMR1_ReadTimer(void)
+[v _TMR1_ReadTimer `(us ~T0 @X0 1 ef ]
+"106
+[; ;mcc_generated_files/tmr1.c: 106: {
+{
+[e :U _TMR1_ReadTimer ]
+[f ]
+"107
+[; ;mcc_generated_files/tmr1.c: 107:     uint16_t readVal;
+[v _readVal `us ~T0 @X0 1 a ]
+"108
+[; ;mcc_generated_files/tmr1.c: 108:     uint8_t readValHigh;
+[v _readValHigh `uc ~T0 @X0 1 a ]
+"109
+[; ;mcc_generated_files/tmr1.c: 109:     uint8_t readValLow;
+[v _readValLow `uc ~T0 @X0 1 a ]
+"112
+[; ;mcc_generated_files/tmr1.c: 112:     readValLow = TMR1L;
+[e = _readValLow _TMR1L ]
+"113
+[; ;mcc_generated_files/tmr1.c: 113:     readValHigh = TMR1H;
+[e = _readValHigh _TMR1H ]
+"115
+[; ;mcc_generated_files/tmr1.c: 115:     readVal = ((uint16_t)readValHigh << 8) | readValLow;
+[e = _readVal -> | << -> -> _readValHigh `us `ui -> 8 `i -> _readValLow `ui `us ]
+"117
+[; ;mcc_generated_files/tmr1.c: 117:     return readVal;
+[e ) _readVal ]
+[e $UE 385  ]
+"118
+[; ;mcc_generated_files/tmr1.c: 118: }
+[e :UE 385 ]
+}
+"120
+[; ;mcc_generated_files/tmr1.c: 120: void TMR1_WriteTimer(uint16_t timerVal)
+[v _TMR1_WriteTimer `(v ~T0 @X0 1 ef1`us ]
+"121
+[; ;mcc_generated_files/tmr1.c: 121: {
+{
+[e :U _TMR1_WriteTimer ]
+"120
+[; ;mcc_generated_files/tmr1.c: 120: void TMR1_WriteTimer(uint16_t timerVal)
+[v _timerVal `us ~T0 @X0 1 r1 ]
+"121
+[; ;mcc_generated_files/tmr1.c: 121: {
+[f ]
+"122
+[; ;mcc_generated_files/tmr1.c: 122:     if (T1CONbits.nT1SYNC == 1)
+[e $ ! == -> . . _T1CONbits 0 2 `i -> 1 `i 387  ]
+"123
+[; ;mcc_generated_files/tmr1.c: 123:     {
+{
+"125
+[; ;mcc_generated_files/tmr1.c: 125:         T1CONbits.TMR1ON = 0;
+[e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
+"128
+[; ;mcc_generated_files/tmr1.c: 128:         TMR1H = (uint8_t)(timerVal >> 8);
+[e = _TMR1H -> >> -> _timerVal `ui -> 8 `i `uc ]
+"129
+[; ;mcc_generated_files/tmr1.c: 129:         TMR1L = (uint8_t)timerVal;
+[e = _TMR1L -> _timerVal `uc ]
+"132
+[; ;mcc_generated_files/tmr1.c: 132:         T1CONbits.TMR1ON =1;
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+"133
+[; ;mcc_generated_files/tmr1.c: 133:     }
+}
+[e $U 388  ]
+"134
+[; ;mcc_generated_files/tmr1.c: 134:     else
+[e :U 387 ]
+"135
+[; ;mcc_generated_files/tmr1.c: 135:     {
+{
+"137
+[; ;mcc_generated_files/tmr1.c: 137:         TMR1H = (uint8_t)(timerVal >> 8);
+[e = _TMR1H -> >> -> _timerVal `ui -> 8 `i `uc ]
+"138
+[; ;mcc_generated_files/tmr1.c: 138:         TMR1L = (uint8_t)timerVal;
+[e = _TMR1L -> _timerVal `uc ]
+"139
+[; ;mcc_generated_files/tmr1.c: 139:     }
 }
 [e :U 388 ]
-"66
-[; ;BMP_180.c: 66:     x2 = (BMP180.CALIBRATION_DATA.MC << 11) / (x1 + BMP180.CALIBRATION_DATA.MD);
-[e = _x2 / -> << -> . . _BMP180 2 10 `i -> 11 `i `l + _x1 -> . . _BMP180 2 11 `l ]
-"67
-[; ;BMP_180.c: 67:     BMP180.CALIBRATION_DATA.B5 = x1 + x2;
-[e = . . _BMP180 2 8 + _x1 _x2 ]
-"68
-[; ;BMP_180.c: 68:     t = (BMP180.CALIBRATION_DATA.B5 + 8) >> 4;
-[e = _t >> + . . _BMP180 2 8 -> -> 8 `i `l -> 4 `i ]
-"70
-[; ;BMP_180.c: 70:     return t;
-[e ) _t ]
-[e $UE 387  ]
-"71
-[; ;BMP_180.c: 71: }
-[e :UE 387 ]
+"140
+[; ;mcc_generated_files/tmr1.c: 140: }
+[e :UE 386 ]
 }
-"73
-[; ;BMP_180.c: 73: int32_t get_pressure_BMP180(uint8_t mode_oversampling_setting){
-[v _get_pressure_BMP180 `(l ~T0 @X0 1 ef1`uc ]
+"142
+[; ;mcc_generated_files/tmr1.c: 142: void TMR1_Reload(void)
+[v _TMR1_Reload `(v ~T0 @X0 1 ef ]
+"143
+[; ;mcc_generated_files/tmr1.c: 143: {
 {
-[e :U _get_pressure_BMP180 ]
-[v _mode_oversampling_setting `uc ~T0 @X0 1 r1 ]
+[e :U _TMR1_Reload ]
 [f ]
-"74
-[; ;BMP_180.c: 74:     int32_t b6 = 0;
-[v _b6 `l ~T0 @X0 1 a ]
-[e = _b6 -> -> 0 `i `l ]
-"75
-[; ;BMP_180.c: 75:     int32_t x1 = 0;
-[v _x1 `l ~T0 @X0 1 a ]
-[e = _x1 -> -> 0 `i `l ]
-"76
-[; ;BMP_180.c: 76:     int32_t x2 = 0;
-[v _x2 `l ~T0 @X0 1 a ]
-[e = _x2 -> -> 0 `i `l ]
-"77
-[; ;BMP_180.c: 77:     int32_t x3 = 0;
-[v _x3 `l ~T0 @X0 1 a ]
-[e = _x3 -> -> 0 `i `l ]
-"78
-[; ;BMP_180.c: 78:     int32_t b3 = 0;
-[v _b3 `l ~T0 @X0 1 a ]
-[e = _b3 -> -> 0 `i `l ]
-"79
-[; ;BMP_180.c: 79:     uint32_t b4 = 0;
-[v _b4 `ul ~T0 @X0 1 a ]
-[e = _b4 -> -> -> 0 `i `l `ul ]
-"80
-[; ;BMP_180.c: 80:     uint32_t b7 = 0;
-[v _b7 `ul ~T0 @X0 1 a ]
-[e = _b7 -> -> -> 0 `i `l `ul ]
-"81
-[; ;BMP_180.c: 81:     int32_t uncompensated_pressure = 0;
-[v _uncompensated_pressure `l ~T0 @X0 1 a ]
-[e = _uncompensated_pressure -> -> 0 `i `l ]
-"82
-[; ;BMP_180.c: 82:     int32_t p = 0;
-[v _p `l ~T0 @X0 1 a ]
-[e = _p -> -> 0 `i `l ]
-[v F3852 `uc ~T0 @X0 -> 6 `i s ]
-[i F3852
-:U ..
-"83
-[; ;BMP_180.c: 83:     uint8_t buffer_I2C[6] = {0xF4, (0x34 + (mode_oversampling_setting << 6)),
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
-..
-]
-[v _buffer_I2C `uc ~T0 @X0 -> 6 `i a ]
-[e = _buffer_I2C F3852 ]
-[e ; = *U + &U _buffer_I2C * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux -> -> 244 `i `uc ; = *U + &U _buffer_I2C * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux -> + -> 52 `i << -> _mode_oversampling_setting `i -> 6 `i `uc ; = *U + &U _buffer_I2C * -> -> -> 2 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux -> -> 246 `i `uc ; = *U + &U _buffer_I2C * -> -> -> 3 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux -> -> 0 `i `uc = *U + &U _buffer_I2C * -> -> -> 4 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux -> -> 0 `i `uc ]
-"91
-[; ;BMP_180.c: 91:     uncompensated_pressure = ((buffer_I2C[3] << 16) | (buffer_I2C[4] << 8) | buffer_I2C[5]) >> (8 - mode_oversampling_setting);
-[e = _uncompensated_pressure -> >> | | << -> *U + &U _buffer_I2C * -> -> -> 3 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i -> 16 `i << -> *U + &U _buffer_I2C * -> -> -> 4 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i -> 8 `i -> *U + &U _buffer_I2C * -> -> -> 5 `i `ui `ux -> -> # *U &U _buffer_I2C `ui `ux `i - -> 8 `i -> _mode_oversampling_setting `i `l ]
-"93
-[; ;BMP_180.c: 93:     b6 = BMP180.CALIBRATION_DATA.B5 - 4000;
-[e = _b6 - . . _BMP180 2 8 -> -> 4000 `i `l ]
-"94
-[; ;BMP_180.c: 94:     x1 = (BMP180.CALIBRATION_DATA.B2 * ((b6 * b6) >> 12)) >> 11;
-[e = _x1 >> * -> . . _BMP180 2 7 `l >> * _b6 _b6 -> 12 `i -> 11 `i ]
-"95
-[; ;BMP_180.c: 95:     x2 = (BMP180.CALIBRATION_DATA.AC2 * b6) >> 11;
-[e = _x2 >> * -> . . _BMP180 2 1 `l _b6 -> 11 `i ]
-"96
-[; ;BMP_180.c: 96:     x3 = x1 + x2;
-[e = _x3 + _x1 _x2 ]
-"97
-[; ;BMP_180.c: 97:     b3 = (((BMP180.CALIBRATION_DATA.AC1 * 4 + x3) << mode_oversampling_setting) + 2) >> 2;
-[e = _b3 >> + << + -> * -> . . _BMP180 2 0 `i -> 4 `i `l _x3 -> _mode_oversampling_setting `i -> -> 2 `i `l -> 2 `i ]
-"98
-[; ;BMP_180.c: 98:     x1 = (BMP180.CALIBRATION_DATA.AC3 * b6) >> 13;
-[e = _x1 >> * -> . . _BMP180 2 2 `l _b6 -> 13 `i ]
-"99
-[; ;BMP_180.c: 99:     x2 = (BMP180.CALIBRATION_DATA.B1 * ((b6 * b6) >> 12)) >> 16;
-[e = _x2 >> * -> . . _BMP180 2 6 `l >> * _b6 _b6 -> 12 `i -> 16 `i ]
-"100
-[; ;BMP_180.c: 100:     x3 = ((x1 + x2) + 2) >> 2;
-[e = _x3 >> + + _x1 _x2 -> -> 2 `i `l -> 2 `i ]
-"101
-[; ;BMP_180.c: 101:     b4 = BMP180.CALIBRATION_DATA.AC4 * ((uint32_t)(x3 + 32768)) >> 15;
-[e = _b4 >> * -> . . _BMP180 2 3 `ul -> + _x3 -> 32768 `l `ul -> 15 `i ]
-"104
-[; ;BMP_180.c: 104:     if((b3 > uncompensated_pressure) && (b3 > 0)){
-[e $ ! && > _b3 _uncompensated_pressure > _b3 -> -> 0 `i `l 390  ]
-{
-"105
-[; ;BMP_180.c: 105:         b7 = (b3 - uncompensated_pressure) * (50000 >> mode_oversampling_setting);
-[e = _b7 -> * - _b3 _uncompensated_pressure >> -> 50000 `l -> _mode_oversampling_setting `i `ul ]
-"106
-[; ;BMP_180.c: 106:     }
-}
-[e $U 391  ]
-"107
-[; ;BMP_180.c: 107:     else{
-[e :U 390 ]
-{
-"108
-[; ;BMP_180.c: 108:         b7 = (uncompensated_pressure - b3) * (50000 >> mode_oversampling_setting);
-[e = _b7 -> * - _uncompensated_pressure _b3 >> -> 50000 `l -> _mode_oversampling_setting `i `ul ]
-"109
-[; ;BMP_180.c: 109:     }
-}
-[e :U 391 ]
-"111
-[; ;BMP_180.c: 111:     if(b7 < 0x80000000){
-[e $ ! < _b7 -> 2147483648 `ul 392  ]
-{
-"112
-[; ;BMP_180.c: 112:         p = (b7 << 1) / b4;
-[e = _p -> / << _b7 -> 1 `i _b4 `l ]
-"113
-[; ;BMP_180.c: 113:     }
-}
-[e $U 393  ]
-"114
-[; ;BMP_180.c: 114:     else{
-[e :U 392 ]
-{
-"115
-[; ;BMP_180.c: 115:         p = (b7 / b4) << 1;
-[e = _p -> << / _b7 _b4 -> 1 `i `l ]
-"116
-[; ;BMP_180.c: 116:     }
-}
-[e :U 393 ]
-"118
-[; ;BMP_180.c: 118:     x1 = (p >> 8) * (p >> 8);
-[e = _x1 * >> _p -> 8 `i >> _p -> 8 `i ]
-"119
-[; ;BMP_180.c: 119:     x1 = (x1 * 3038) >> 16;
-[e = _x1 >> * _x1 -> -> 3038 `i `l -> 16 `i ]
-"120
-[; ;BMP_180.c: 120:     x2 = (-7357 * p) >> 16;
-[e = _x2 >> * -> -U -> 7357 `i `l _p -> 16 `i ]
-"121
-[; ;BMP_180.c: 121:     p = p + ((x1 + x2 + 3791) >> 4);
-[e = _p + _p >> + + _x1 _x2 -> -> 3791 `i `l -> 4 `i ]
-"123
-[; ;BMP_180.c: 123:     return p;
-[e ) _p ]
-[e $UE 389  ]
-"124
-[; ;BMP_180.c: 124: }
+"144
+[; ;mcc_generated_files/tmr1.c: 144:     TMR1_WriteTimer(timer1ReloadVal);
+[e ( _TMR1_WriteTimer (1 _timer1ReloadVal ]
+"145
+[; ;mcc_generated_files/tmr1.c: 145: }
 [e :UE 389 ]
 }
-"126
-[; ;BMP_180.c: 126: _Bool check_communication_BMP180(void){
-[v _check_communication_BMP180 `(a ~T0 @X0 1 ef ]
+"147
+[; ;mcc_generated_files/tmr1.c: 147: void TMR1_StartSinglePulseAcquisition(void)
+[v _TMR1_StartSinglePulseAcquisition `(v ~T0 @X0 1 ef ]
+"148
+[; ;mcc_generated_files/tmr1.c: 148: {
 {
-[e :U _check_communication_BMP180 ]
+[e :U _TMR1_StartSinglePulseAcquisition ]
 [f ]
-"127
-[; ;BMP_180.c: 127:     uint8_t buffer_I2C = 0;
-[v _buffer_I2C `uc ~T0 @X0 1 a ]
-[e = _buffer_I2C -> -> 0 `i `uc ]
-"129
-[; ;BMP_180.c: 129:     buffer_I2C = I2C_Read1ByteRegister(0x77, 0xD0);
-[e = _buffer_I2C ( _I2C_Read1ByteRegister (2 , -> -> 119 `i `uc -> -> 208 `i `uc ]
-"131
-[; ;BMP_180.c: 131:     if(buffer_I2C == 0x55){
-[e $ ! == -> _buffer_I2C `i -> 85 `i 395  ]
-{
-"132
-[; ;BMP_180.c: 132:         return 1;
-[e ) -> -> 1 `i `a ]
-[e $UE 394  ]
-"133
-[; ;BMP_180.c: 133:     }
+"149
+[; ;mcc_generated_files/tmr1.c: 149:     T1GCONbits.T1GGO = 1;
+[e = . . _T1GCONbits 1 2 -> -> 1 `i `uc ]
+"150
+[; ;mcc_generated_files/tmr1.c: 150: }
+[e :UE 390 ]
 }
-[e $U 396  ]
-"134
-[; ;BMP_180.c: 134:     else{
-[e :U 395 ]
+"152
+[; ;mcc_generated_files/tmr1.c: 152: uint8_t TMR1_CheckGateValueStatus(void)
+[v _TMR1_CheckGateValueStatus `(uc ~T0 @X0 1 ef ]
+"153
+[; ;mcc_generated_files/tmr1.c: 153: {
 {
-"135
-[; ;BMP_180.c: 135:         return 0;
-[e ) -> -> 0 `i `a ]
-[e $UE 394  ]
-"136
-[; ;BMP_180.c: 136:     }
+[e :U _TMR1_CheckGateValueStatus ]
+[f ]
+"154
+[; ;mcc_generated_files/tmr1.c: 154:     return (T1GCONbits.T1GVAL);
+[e ) . . _T1GCONbits 0 2 ]
+[e $UE 391  ]
+"155
+[; ;mcc_generated_files/tmr1.c: 155: }
+[e :UE 391 ]
 }
-[e :U 396 ]
-"137
-[; ;BMP_180.c: 137: }
+"157
+[; ;mcc_generated_files/tmr1.c: 157: void TMR1_ISR(void)
+[v _TMR1_ISR `(v ~T0 @X0 1 ef ]
+"158
+[; ;mcc_generated_files/tmr1.c: 158: {
+{
+[e :U _TMR1_ISR ]
+[f ]
+"161
+[; ;mcc_generated_files/tmr1.c: 161:     PIR1bits.TMR1IF = 0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"162
+[; ;mcc_generated_files/tmr1.c: 162:     TMR1_WriteTimer(timer1ReloadVal);
+[e ( _TMR1_WriteTimer (1 _timer1ReloadVal ]
+"164
+[; ;mcc_generated_files/tmr1.c: 164:     if(TMR1_InterruptHandler)
+[e $ ! != _TMR1_InterruptHandler -> -> 0 `i `*F2996 393  ]
+"165
+[; ;mcc_generated_files/tmr1.c: 165:     {
+{
+"166
+[; ;mcc_generated_files/tmr1.c: 166:         TMR1_InterruptHandler();
+[e ( *U _TMR1_InterruptHandler ..  ]
+"167
+[; ;mcc_generated_files/tmr1.c: 167:     }
+}
+[e :U 393 ]
+"168
+[; ;mcc_generated_files/tmr1.c: 168: }
+[e :UE 392 ]
+}
+"171
+[; ;mcc_generated_files/tmr1.c: 171: void TMR1_SetInterruptHandler(void (* InterruptHandler)(void)){
+[v _TMR1_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F2998 ]
+{
+[e :U _TMR1_SetInterruptHandler ]
+[v _InterruptHandler `*F3000 ~T0 @X0 1 r1 ]
+[f ]
+"172
+[; ;mcc_generated_files/tmr1.c: 172:     TMR1_InterruptHandler = InterruptHandler;
+[e = _TMR1_InterruptHandler _InterruptHandler ]
+"173
+[; ;mcc_generated_files/tmr1.c: 173: }
 [e :UE 394 ]
+}
+"175
+[; ;mcc_generated_files/tmr1.c: 175: void TMR1_DefaultInterruptHandler(void){
+[v _TMR1_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
+{
+[e :U _TMR1_DefaultInterruptHandler ]
+[f ]
+"178
+[; ;mcc_generated_files/tmr1.c: 178: }
+[e :UE 395 ]
 }
