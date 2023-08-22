@@ -36,6 +36,7 @@
 extern "C" {
 #endif
 
+#include "mcc_generated_files/examples/i2c_master_example.h"
 #include "mcc_generated_files/mcc.h"
 #include <stdint.h>
 #include <math.h>

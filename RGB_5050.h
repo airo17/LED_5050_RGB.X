@@ -68,7 +68,7 @@ typedef union {
         uint8_t green;
         uint8_t red;
     }RGB;
-    uint32_t RGB_COLOR;
+    uint32_t rgb_color;
 }color_led;
     
 void set_led_color(uint8_t number_led, uint8_t green, uint8_t red, uint8_t blue);

@@ -26,24 +26,22 @@
 static BMP_180 BMP180;
 
 calibration_data_BMP180 get_calibration_data_BMP180(void){
-    uint8_t buffer_I2C[23] = {0xAA, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+    uint8_t buffer_I2C[22] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+                              0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 
-    SERCOM0_I2C_WriteRead(BMP180_ADDRESS, &buffer_I2C[0], 1, &buffer_I2C[1], 22);
-
-    while(SERCOM0_I2C_IsBusy());
+    I2C_ReadDataBlock(BMP180_ADDRESS, 0xAA, &buffer_I2C[0], 22);
     
-    BMP180.CALIBRATION_DATA.AC1 = (buffer_I2C[1] << 8) | buffer_I2C[2];
-    BMP180.CALIBRATION_DATA.AC2 = (buffer_I2C[3] << 8) | buffer_I2C[4];
-    BMP180.CALIBRATION_DATA.AC3 = (buffer_I2C[5] << 8) | buffer_I2C[6];
-    BMP180.CALIBRATION_DATA.AC4 = (buffer_I2C[7] << 8) | buffer_I2C[8];
-    BMP180.CALIBRATION_DATA.AC5 = (buffer_I2C[9] << 8) | buffer_I2C[10];
-    BMP180.CALIBRATION_DATA.AC6 = (buffer_I2C[11] << 8) | buffer_I2C[12];
-    BMP180.CALIBRATION_DATA.B1 = (buffer_I2C[13] << 8) | buffer_I2C[14];
-    BMP180.CALIBRATION_DATA.B2 = (buffer_I2C[15] << 8) | buffer_I2C[16];
-    BMP180.CALIBRATION_DATA.MB = (buffer_I2C[17] << 8) | buffer_I2C[18];
-    BMP180.CALIBRATION_DATA.MC = (buffer_I2C[19] << 8) | buffer_I2C[20];
-    BMP180.CALIBRATION_DATA.MD = (buffer_I2C[21] << 8) | buffer_I2C[22];
+    BMP180.CALIBRATION_DATA.AC1 = (buffer_I2C[0] << 8) | buffer_I2C[1];
+    BMP180.CALIBRATION_DATA.AC2 = (buffer_I2C[2] << 8) | buffer_I2C[3];
+    BMP180.CALIBRATION_DATA.AC3 = (buffer_I2C[4] << 8) | buffer_I2C[5];
+    BMP180.CALIBRATION_DATA.AC4 = (buffer_I2C[6] << 8) | buffer_I2C[7];
+    BMP180.CALIBRATION_DATA.AC5 = (buffer_I2C[8] << 8) | buffer_I2C[9];
+    BMP180.CALIBRATION_DATA.AC6 = (buffer_I2C[10] << 8) | buffer_I2C[11];
+    BMP180.CALIBRATION_DATA.B1 = (buffer_I2C[12] << 8) | buffer_I2C[13];
+    BMP180.CALIBRATION_DATA.B2 = (buffer_I2C[14] << 8) | buffer_I2C[15];
+    BMP180.CALIBRATION_DATA.MB = (buffer_I2C[16] << 8) | buffer_I2C[17];
+    BMP180.CALIBRATION_DATA.MC = (buffer_I2C[18] << 8) | buffer_I2C[19];
+    BMP180.CALIBRATION_DATA.MD = (buffer_I2C[20] << 8) | buffer_I2C[21];
     
     return BMP180.CALIBRATION_DATA;
 }
@@ -53,14 +51,10 @@ int32_t get_temperature_BMP180(void){
     int32_t x2 = 0;
     int32_t t = 0;
     int32_t uncompensated_temperature = 0;
-    uint8_t buffer_I2C[5] = {REGISTER_MEASUREMENT_CONTROL, COMANDO_START_MEASUREMENT_TEMPERATURE, REGISTER_MSB, 0x00, 0x00};
     
-    SERCOM0_I2C_Write(BMP180_ADDRESS, &buffer_I2C[0], 2);
-    for(uint32_t i = 0; i < 1000000; i++);
-    SERCOM0_I2C_WriteRead(BMP180_ADDRESS, &buffer_I2C[2], 1, &buffer_I2C[3], 2);
-    while(SERCOM0_I2C_IsBusy());
-    
-    uncompensated_temperature = (buffer_I2C[3] << 8) | buffer_I2C[4];
+    I2C_Write1ByteRegister(BMP180_ADDRESS, REGISTER_MEASUREMENT_CONTROL, COMANDO_START_MEASUREMENT_TEMPERATURE);
+    __delay_us(4500); // wait 4.5 ms
+    uncompensated_temperature = I2C_Read2ByteRegister(BMP180_ADDRESS, REGISTER_MSB);
     
     x1 = ((uncompensated_temperature - BMP180.CALIBRATION_DATA.AC6) * BMP180.CALIBRATION_DATA.AC5) >> 15;
     
@@ -89,10 +83,10 @@ int32_t get_pressure_BMP180(uint8_t mode_oversampling_setting){
     uint8_t buffer_I2C[6] = {REGISTER_MEASUREMENT_CONTROL, (COMANDO_START_MEASUREMENT_PRESSURE + (mode_oversampling_setting << 6)),
                              REGISTER_MSB, 0x00, 0x00};
     
-    SERCOM0_I2C_Write(BMP180_ADDRESS, &buffer_I2C[0], 2);
-    for(uint32_t i = 0; i < 1000000; i++);
-    SERCOM0_I2C_WriteRead(BMP180_ADDRESS, &buffer_I2C[2], 1, &buffer_I2C[3], 3);
-    while(SERCOM0_I2C_IsBusy());
+//    SERCOM0_I2C_Write(BMP180_ADDRESS, &buffer_I2C[0], 2);
+//    for(uint32_t i = 0; i < 1000000; i++);
+//    SERCOM0_I2C_WriteRead(BMP180_ADDRESS, &buffer_I2C[2], 1, &buffer_I2C[3], 3);
+//    while(SERCOM0_I2C_IsBusy());
     
     uncompensated_pressure = ((buffer_I2C[3] << 16) | (buffer_I2C[4] << 8) | buffer_I2C[5]) >> (8 - mode_oversampling_setting);
     
@@ -130,12 +124,11 @@ int32_t get_pressure_BMP180(uint8_t mode_oversampling_setting){
 }
 
 bool check_communication_BMP180(void){
-    uint8_t buffer_I2C[2] = {REGISTER_ID, 0x00};
+    uint8_t buffer_I2C = 0;
     
-    SERCOM0_I2C_WriteRead(BMP180_ADDRESS, &buffer_I2C[0], 1, &buffer_I2C[1], 1);
-    while(SERCOM0_I2C_IsBusy());
+    buffer_I2C = I2C_Read1ByteRegister(BMP180_ADDRESS, REGISTER_ID);
     
-    if(buffer_I2C[1] == 0x55){
+    if(buffer_I2C == 0x55){
         return true;
     }
     else{

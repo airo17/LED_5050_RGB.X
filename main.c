@@ -45,6 +45,9 @@
 #include "RGB_5050.h"
 #include "BMP_180.h"
 
+color_led COLOR_LED[16];
+bool status_communication = false;
+BMP_180 DATA_BMP_180;
 /*
                          Main application
  */
@@ -68,10 +71,41 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
-    set_led_color(16, 0, 255, 0);
+    __delay_ms(1000);
+    LATBbits.LATB4 = 1;
+    
+//    COLOR_LED[0].RGB.red = 255;
+//    COLOR_LED[1].RGB.red = 255;
+//    COLOR_LED[2].RGB.red = 255;
+    COLOR_LED[3].rgb_color = 0xFFFFFF;
+//    COLOR_LED[4].RGB.red = 255;
+//    COLOR_LED[5].RGB.green = 255;
+//    COLOR_LED[6].RGB.green = 255;
+    COLOR_LED[7].rgb_color = 0xFFFFFF;
+//    COLOR_LED[8].RGB.green = 255;
+//    COLOR_LED[9].RGB.green = 255;
+//    COLOR_LED[10].RGB.green = 255;
+    COLOR_LED[11].rgb_color = 0xFFFFFF;
+//    COLOR_LED[12].RGB.blue = 255;
+//    COLOR_LED[13].RGB.blue = 255;
+//    COLOR_LED[14].RGB.blue = 255;
+    COLOR_LED[15].rgb_color = 0xFFFFFF;
+//    
+    set_strip_led_color(16, COLOR_LED);
+    
+//    set_led_color(16, 0, 0, 0);
+    
+    DATA_BMP_180.CALIBRATION_DATA = get_calibration_data_BMP180();
     
     while (1)
     {
+//        status_communication = check_communication_BMP180();
+//        if(status_communication){
+//            set_led_color(1, 0, 255, 0);
+//        }
+        
+        DATA_BMP_180.temperature = get_temperature_BMP180();
+        __delay_ms(5000);
 //        LATBbits.LATB5 = 1;
 //        LATBbits.LATB5 = 0;
     }
