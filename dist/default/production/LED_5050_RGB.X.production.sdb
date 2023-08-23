@@ -72,9 +72,9 @@ I2C_NULL 5
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"58 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\main.c
+"59 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\main.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
-"92
+"94
 [v _main main `(v  1 e 1 0 ]
 "63 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/examples/i2c_master_example.c
 [v _I2C_Read1ByteRegister I2C_Read1ByteRegister `(uc  1 e 1 0 ]
@@ -210,6 +210,10 @@ I2C_NULL 5
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "64 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"93
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
+"99
+[v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]
 "120
 [v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
 "157
@@ -218,6 +222,9 @@ I2C_NULL 5
 [v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
 "175
 [v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
+"30 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\RGB_5050.c
+[v _set_led_color set_led_color `(v  1 e 1 0 ]
+[v i1_set_led_color set_led_color `(v  1 e 1 0 ]
 [s S118 . 26 `s 1 AC1 2 0 `s 1 AC2 2 2 `s 1 AC3 2 4 `us 1 AC4 2 6 `us 1 AC5 2 8 `us 1 AC6 2 10 `s 1 B1 2 12 `s 1 B2 2 14 `l 1 B5 4 16 `s 1 MB 2 20 `s 1 MC 2 22 `s 1 MD 2 24 ]
 "26 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\BMP_180.c
 [s S131 . 34 `l 1 temperature 4 0 `l 1 pressure 4 4 `S118 1 CALIBRATION_DATA 26 8 ]
@@ -239,7 +246,7 @@ I2C_NULL 5
 ]
 [u S149 . 1 `S135 1 . 1 0 `S144 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES149  1 e 1 @11 ]
-[s S213 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S192 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -249,9 +256,9 @@ I2C_NULL 5
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "733
-[u S222 . 1 `S213 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES222  1 e 1 @17 ]
-[s S783 . 1 `uc 1 CCP2IF 1 0 :1:0 
+[u S201 . 1 `S192 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES201  1 e 1 @17 ]
+[s S800 . 1 `uc 1 CCP2IF 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 LCDIF 1 0 :1:2 
 `uc 1 BCLIF 1 0 :1:3 
@@ -261,15 +268,15 @@ I2C_NULL 5
 `uc 1 OSFIF 1 0 :1:7 
 ]
 "795
-[u S792 . 1 `S783 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES792  1 e 1 @18 ]
+[u S809 . 1 `S800 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES809  1 e 1 @18 ]
 "908
 [v _TMR1L TMR1L `VEuc  1 e 1 @22 ]
 "928
 [v _TMR1H TMR1H `VEuc  1 e 1 @23 ]
 "948
 [v _T1CON T1CON `VEuc  1 e 1 @24 ]
-[s S1191 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S1208 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
@@ -279,15 +286,15 @@ I2C_NULL 5
 `uc 1 TMR1CS1 1 0 :1:7 
 ]
 "970
-[s S1200 . 1 `uc 1 . 1 0 :4:0 
+[s S1217 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T1CKPS 1 0 :2:4 
 `uc 1 TMR1CS 1 0 :2:6 
 ]
-[u S1204 . 1 `S1191 1 . 1 0 `S1200 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES1204  1 e 1 @24 ]
+[u S1221 . 1 `S1208 1 . 1 0 `S1217 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES1221  1 e 1 @24 ]
 "1020
 [v _T1GCON T1GCON `VEuc  1 e 1 @25 ]
-[s S1221 . 1 `uc 1 T1GSS0 1 0 :1:0 
+[s S1238 . 1 `uc 1 T1GSS0 1 0 :1:0 
 `uc 1 T1GSS1 1 0 :1:1 
 `uc 1 T1GVAL 1 0 :1:2 
 `uc 1 T1GGO_nDONE 1 0 :1:3 
@@ -297,12 +304,12 @@ I2C_NULL 5
 `uc 1 TMR1GE 1 0 :1:7 
 ]
 "1042
-[s S1230 . 1 `uc 1 T1GSS 1 0 :2:0 
+[s S1247 . 1 `uc 1 T1GSS 1 0 :2:0 
 `uc 1 . 1 0 :1:2 
 `uc 1 T1GGO 1 0 :1:3 
 ]
-[u S1234 . 1 `S1221 1 . 1 0 `S1230 1 . 1 0 ]
-[v _T1GCONbits T1GCONbits `VES1234  1 e 1 @25 ]
+[u S1251 . 1 `S1238 1 . 1 0 `S1247 1 . 1 0 ]
+[v _T1GCONbits T1GCONbits `VES1251  1 e 1 @25 ]
 "1308
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1370
@@ -313,7 +320,7 @@ I2C_NULL 5
 [v _TRISD TRISD `VEuc  1 e 1 @143 ]
 "1556
 [v _TRISE TRISE `VEuc  1 e 1 @144 ]
-[s S192 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S171 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -323,8 +330,8 @@ I2C_NULL 5
 `uc 1 TMR1GIE 1 0 :1:7 
 ]
 "1611
-[u S201 . 1 `S192 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES201  1 e 1 @145 ]
+[u S180 . 1 `S171 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES180  1 e 1 @145 ]
 [s S38 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
@@ -352,7 +359,7 @@ I2C_NULL 5
 [v _LATA LATA `VEuc  1 e 1 @268 ]
 "2414
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-[s S171 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S236 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -362,8 +369,8 @@ I2C_NULL 5
 `uc 1 LATB7 1 0 :1:7 
 ]
 "2431
-[u S180 . 1 `S171 1 . 1 0 ]
-[v _LATBbits LATBbits `VES180  1 e 1 @269 ]
+[u S245 . 1 `S236 1 . 1 0 ]
+[v _LATBbits LATBbits `VES245  1 e 1 @269 ]
 "2476
 [v _LATC LATC `VEuc  1 e 1 @270 ]
 "2538
@@ -392,7 +399,7 @@ I2C_NULL 5
 [v _SSPADD SSPADD `VEuc  1 e 1 @530 ]
 "4209
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @532 ]
-[s S804 . 1 `uc 1 BF 1 0 :1:0 
+[s S821 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -402,11 +409,11 @@ I2C_NULL 5
 `uc 1 SMP 1 0 :1:7 
 ]
 "4226
-[u S813 . 1 `S804 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES813  1 e 1 @532 ]
+[u S830 . 1 `S821 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES830  1 e 1 @532 ]
 "4271
 [v _SSPCON1 SSPCON1 `VEuc  1 e 1 @533 ]
-[s S597 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S614 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
@@ -416,13 +423,13 @@ I2C_NULL 5
 `uc 1 WCOL 1 0 :1:7 
 ]
 "4296
-[s S606 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S623 . 1 `uc 1 SSPM 1 0 :4:0 
 ]
-[u S608 . 1 `S597 1 . 1 0 `S606 1 . 1 0 ]
-[v _SSPCON1bits SSPCON1bits `VES608  1 e 1 @533 ]
+[u S625 . 1 `S614 1 . 1 0 `S623 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES625  1 e 1 @533 ]
 "4409
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @534 ]
-[s S762 . 1 `uc 1 SEN 1 0 :1:0 
+[s S779 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -432,31 +439,59 @@ I2C_NULL 5
 `uc 1 GCEN 1 0 :1:7 
 ]
 "4426
-[u S771 . 1 `S762 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES771  1 e 1 @534 ]
+[u S788 . 1 `S779 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES788  1 e 1 @534 ]
 "8883
 [v _PLLR PLLR `VEb  1 e 0 @1238 ]
 "55 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\main.c
 [v _time_out_timer time_out_timer `us  1 e 2 0 ]
+"56
+[v _flag_turn_on_light flag_turn_on_light `a  1 e 1 0 ]
 "30 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/ext_int.c
 [v _INT_InterruptHandler INT_InterruptHandler `*.37(v  1 e 2 0 ]
 "146 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/i2c_master.c
 [v _i2c_fsmStateTable i2c_fsmStateTable `DC[16]*.37(E3352  1 e 32 0 ]
-[s S571 . 29 `[6]*.37(E360 1 callbackTable 12 0 `[6]*.1v 1 callbackPayload 6 12 `us 1 time_out 2 18 `us 1 time_out_value 2 20 `uc 1 address 1 22 `*.4uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E3352 1 state 1 26 `E355 1 error 1 27 `uc 1 addressNackCheck 1 28 :1:0 
+[s S588 . 29 `[6]*.37(E360 1 callbackTable 12 0 `[6]*.1v 1 callbackPayload 6 12 `us 1 time_out 2 18 `us 1 time_out_value 2 20 `uc 1 address 1 22 `*.4uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E3352 1 state 1 26 `E355 1 error 1 27 `uc 1 addressNackCheck 1 28 :1:0 
 `uc 1 busy 1 28 :1:1 
 `uc 1 inUse 1 28 :1:2 
 `uc 1 bufferFree 1 28 :1:3 
 ]
 "165
-[v _I2C_Status I2C_Status `S571  1 e 29 0 ]
+[v _I2C_Status I2C_Status `S588  1 e 29 0 ]
 "57 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
 "58
 [v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
-"92 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\main.c
+"94 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"150
+"159
+} 0
+"30 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\RGB_5050.c
+[v _set_led_color set_led_color `(v  1 e 1 0 ]
+{
+[v set_led_color@number_led number_led `uc  1 a 1 wreg ]
+"51
+[v set_led_color@i_353 i `uc  1 a 1 8 ]
+"42
+[v set_led_color@i_352 i `uc  1 a 1 7 ]
+"33
+[v set_led_color@i i `uc  1 a 1 6 ]
+"32
+[v set_led_color@number_led_choose number_led_choose `uc  1 a 1 5 ]
+"30
+[v set_led_color@number_led number_led `uc  1 a 1 wreg ]
+[v set_led_color@red red `uc  1 p 1 0 ]
+[v set_led_color@green green `uc  1 p 1 1 ]
+[v set_led_color@blue blue `uc  1 p 1 2 ]
+"32
+[v set_led_color@number_led number_led `uc  1 a 1 4 ]
+"61
+} 0
+"93 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/tmr1.c
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
+{
+"97
 } 0
 "50 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -505,12 +540,38 @@ I2C_NULL 5
 [v INT_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "52
 } 0
-"58 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\main.c
+"59 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\main.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
-"88
+"90
 } 0
-"157 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/tmr1.c
+"30 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\RGB_5050.c
+[v i1_set_led_color set_led_color `(v  1 e 1 0 ]
+{
+[v i1set_led_color@number_led number_led `uc  1 a 1 wreg ]
+"51
+[v i1set_led_color@i_353 i `uc  1 a 1 8 ]
+"42
+[v i1set_led_color@i_352 i `uc  1 a 1 7 ]
+"33
+[v i1set_led_color@i i `uc  1 a 1 6 ]
+"32
+[v i1set_led_color@number_led_choose number_led_choose `uc  1 a 1 5 ]
+"30
+[v i1set_led_color@number_led number_led `uc  1 a 1 wreg ]
+[v i1set_led_color@red red `uc  1 p 1 0 ]
+[v i1set_led_color@green green `uc  1 p 1 1 ]
+[v i1set_led_color@blue blue `uc  1 p 1 2 ]
+"32
+[v i1set_led_color@number_led number_led `uc  1 a 1 4 ]
+"61
+} 0
+"99 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/tmr1.c
+[v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]
+{
+"103
+} 0
+"157
 [v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
 {
 "168

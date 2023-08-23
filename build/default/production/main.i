@@ -6109,6 +6109,7 @@ color_led COLOR_LED[16];
 _Bool status_communication = 0;
 BMP_180 DATA_BMP_180;
 uint16_t time_out_timer = 0;
+_Bool flag_turn_on_light = 0;
 
 
 void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
@@ -6117,7 +6118,7 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
     if(INTCONbits.INTE == 1 && INTCONbits.INTF == 1)
     {
         INT_ISR();
-        LATBbits.LATB4 ^= 1;
+        flag_turn_on_light = 1;
     }
     else if(INTCONbits.PEIE == 1)
     {
@@ -6125,8 +6126,9 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
         {
             TMR1_ISR();
             if(time_out_timer >= 1000){
-                LATBbits.LATB4 ^= 1;
+                set_led_color(16, 0, 0, 0);
                 time_out_timer = 0;
+                TMR1_StopTimer();
             }
             else{
                 time_out_timer++;
@@ -6149,12 +6151,20 @@ void main(void)
 {
 
     SYSTEM_Initialize();
-# 112 "main.c"
+# 114 "main.c"
     _delay((unsigned long)((1000)*(32000000/4000.0)));
-    LATBbits.LATB4 = 0;
-# 138 "main.c"
+    LATBbits.LATB4 = 1;
+    (INTCONbits.GIE = 1);
+# 140 "main.c"
     while (1)
     {
-# 149 "main.c"
+        if(flag_turn_on_light){
+            (INTCONbits.GIE = 0);
+            set_led_color(16, 255, 255, 255);
+            flag_turn_on_light = 0;
+            (INTCONbits.GIE = 1);
+            TMR1_StartTimer();
+        }
+# 158 "main.c"
     }
 }

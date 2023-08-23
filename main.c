@@ -53,6 +53,7 @@ color_led COLOR_LED[16];
 bool status_communication = false;
 BMP_180 DATA_BMP_180;
 uint16_t time_out_timer = 0;
+bool flag_turn_on_light = false;
 
 // Interrupts
 void __interrupt() INTERRUPT_InterruptManager (void)
@@ -61,7 +62,7 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     if(INTCONbits.INTE == 1 && INTCONbits.INTF == 1)
     {
         INT_ISR();
-        LED_TOGGLE;
+        flag_turn_on_light = true;
     }
     else if(INTCONbits.PEIE == 1)
     {
@@ -69,8 +70,9 @@ void __interrupt() INTERRUPT_InterruptManager (void)
         {
             TMR1_ISR();
             if(time_out_timer >= 1000){
-                LED_TOGGLE;
+                set_led_color(16, 0, 0, 0);
                 time_out_timer = 0;
+                TMR1_StopTimer();
             }
             else{
                 time_out_timer++;
@@ -98,7 +100,7 @@ void main(void)
     // Use the following macros to:
 
     // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
+//    INTERRUPT_GlobalInterruptEnable();
 
     // Enable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptEnable();
@@ -110,8 +112,8 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
     
     __delay_ms(1000);
-    LED_OFF;
-    
+    LED_ON;
+    INTERRUPT_GlobalInterruptEnable();
 //    COLOR_LED[0].RGB.red = 255;
 //    COLOR_LED[1].RGB.red = 255;
 //    COLOR_LED[2].RGB.red = 255;
@@ -137,6 +139,13 @@ void main(void)
     
     while (1)
     {
+        if(flag_turn_on_light){
+            INTERRUPT_GlobalInterruptDisable();
+            set_led_color(16, 255, 255, 255);
+            flag_turn_on_light = false;
+            INTERRUPT_GlobalInterruptEnable();
+            TMR1_StartTimer();
+        }
 //        status_communication = check_communication_BMP180();
 //        if(status_communication){
 //            set_led_color(1, 0, 255, 0);
