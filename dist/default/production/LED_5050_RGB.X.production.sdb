@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F1937 ]
 [d frameptr 6 ]
-"67 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/examples/i2c_master_example.c
+"67 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/examples/i2c_master_example.c
 [e E355 . `uc
 I2C_NOERR 0
 I2C_BUSY 1
@@ -17,7 +17,7 @@ I2C_RESTART_WRITE 3
 I2C_CONTINUE 4
 I2C_RESET_LINK 5
 ]
-"146 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/i2c_master.c
+"146 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/i2c_master.c
 [e E3352 . `uc
 I2C_IDLE 0
 I2C_SEND_ADR_READ 1
@@ -58,25 +58,25 @@ I2C_DATA_NACK 3
 I2C_TIMEOUT 4
 I2C_NULL 5
 ]
-"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\__lldiv.c
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\aldiv.c
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\aldiv.c
 [v ___aldiv __aldiv `(l  1 e 4 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\sprcadd.c
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\Umul32.c
+"15 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\common\Umul8_16.c
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"6 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c99\pic\__eeprom.c
+"6 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"59 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\main.c
+"63 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\main.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
-"94
+"100
 [v _main main `(v  1 e 1 0 ]
-"63 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/examples/i2c_master_example.c
+"63 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/examples/i2c_master_example.c
 [v _I2C_Read1ByteRegister I2C_Read1ByteRegister `(uc  1 e 1 0 ]
 "77
 [v _I2C_Read2ByteRegister I2C_Read2ByteRegister `(us  1 e 2 0 ]
@@ -94,7 +94,7 @@ I2C_NULL 5
 [v _wr2RegCompleteHandler wr2RegCompleteHandler `(E360  1 s 1 wr2RegCompleteHandler ]
 "170
 [v _rdBlkRegCompleteHandler rdBlkRegCompleteHandler `(E360  1 s 1 rdBlkRegCompleteHandler ]
-"32 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/ext_int.c
+"32 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/ext_int.c
 [v _INT_ISR INT_ISR `(v  1 e 1 0 ]
 "41
 [v _INT_CallBack INT_CallBack `(v  1 e 1 0 ]
@@ -104,7 +104,7 @@ I2C_NULL 5
 [v _INT_DefaultInterruptHandler INT_DefaultInterruptHandler `(v  1 e 1 0 ]
 "59
 [v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
-"167 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/i2c_master.c
+"167 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/i2c_master.c
 [v _I2C_Initialize I2C_Initialize `(v  1 e 1 0 ]
 "176
 [v _I2C_Open I2C_Open `(E355  1 e 1 0 ]
@@ -200,15 +200,15 @@ I2C_NULL 5
 [v _I2C_MasterSetIrq I2C_MasterSetIrq `T(v  1 s 1 I2C_MasterSetIrq ]
 "650
 [v _I2C_MasterWaitForEvent I2C_MasterWaitForEvent `T(v  1 s 1 I2C_MasterWaitForEvent ]
-"50 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/mcc.c
+"50 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "61
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "75
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
-"55 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/pin_manager.c
+"55 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"64 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/tmr1.c
+"64 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 "93
 [v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
@@ -222,14 +222,13 @@ I2C_NULL 5
 [v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
 "175
 [v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
-"30 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\RGB_5050.c
+"30 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\RGB_5050.c
 [v _set_led_color set_led_color `(v  1 e 1 0 ]
-[v i1_set_led_color set_led_color `(v  1 e 1 0 ]
-[s S118 . 26 `s 1 AC1 2 0 `s 1 AC2 2 2 `s 1 AC3 2 4 `us 1 AC4 2 6 `us 1 AC5 2 8 `us 1 AC6 2 10 `s 1 B1 2 12 `s 1 B2 2 14 `l 1 B5 4 16 `s 1 MB 2 20 `s 1 MC 2 22 `s 1 MD 2 24 ]
-"26 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\BMP_180.c
-[s S131 . 34 `l 1 temperature 4 0 `l 1 pressure 4 4 `S118 1 CALIBRATION_DATA 26 8 ]
-[v _BMP180 BMP180 `S131  1 s 34 BMP180 ]
-[s S135 . 1 `uc 1 IOCIF 1 0 :1:0 
+[s S1054 . 26 `s 1 AC1 2 0 `s 1 AC2 2 2 `s 1 AC3 2 4 `us 1 AC4 2 6 `us 1 AC5 2 8 `us 1 AC6 2 10 `s 1 B1 2 12 `s 1 B2 2 14 `l 1 B5 4 16 `s 1 MB 2 20 `s 1 MC 2 22 `s 1 MD 2 24 ]
+"26 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\BMP_180.c
+[s S1067 . 34 `l 1 temperature 4 0 `l 1 pressure 4 4 `S1054 1 CALIBRATION_DATA 26 8 ]
+[v _BMP180 BMP180 `S1067  1 s 34 BMP180 ]
+[s S832 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 IOCIE 1 0 :1:3 
@@ -238,15 +237,15 @@ I2C_NULL 5
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-"375 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1937.h
-[s S144 . 1 `uc 1 . 1 0 :2:0 
+"375 C:\Program Files\Microchip\xc8\v2.36\pic\include\proc\pic16f1937.h
+[s S841 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S149 . 1 `S135 1 . 1 0 `S144 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES149  1 e 1 @11 ]
-[s S192 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S846 . 1 `S832 1 . 1 0 `S841 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES846  1 e 1 @11 ]
+[s S610 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -256,9 +255,9 @@ I2C_NULL 5
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "733
-[u S201 . 1 `S192 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES201  1 e 1 @17 ]
-[s S800 . 1 `uc 1 CCP2IF 1 0 :1:0 
+[u S619 . 1 `S610 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES619  1 e 1 @17 ]
+[s S547 . 1 `uc 1 CCP2IF 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 LCDIF 1 0 :1:2 
 `uc 1 BCLIF 1 0 :1:3 
@@ -268,15 +267,15 @@ I2C_NULL 5
 `uc 1 OSFIF 1 0 :1:7 
 ]
 "795
-[u S809 . 1 `S800 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES809  1 e 1 @18 ]
+[u S556 . 1 `S547 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES556  1 e 1 @18 ]
 "908
 [v _TMR1L TMR1L `VEuc  1 e 1 @22 ]
 "928
 [v _TMR1H TMR1H `VEuc  1 e 1 @23 ]
 "948
 [v _T1CON T1CON `VEuc  1 e 1 @24 ]
-[s S1208 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S945 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
@@ -286,15 +285,15 @@ I2C_NULL 5
 `uc 1 TMR1CS1 1 0 :1:7 
 ]
 "970
-[s S1217 . 1 `uc 1 . 1 0 :4:0 
+[s S954 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T1CKPS 1 0 :2:4 
 `uc 1 TMR1CS 1 0 :2:6 
 ]
-[u S1221 . 1 `S1208 1 . 1 0 `S1217 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES1221  1 e 1 @24 ]
+[u S958 . 1 `S945 1 . 1 0 `S954 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES958  1 e 1 @24 ]
 "1020
 [v _T1GCON T1GCON `VEuc  1 e 1 @25 ]
-[s S1238 . 1 `uc 1 T1GSS0 1 0 :1:0 
+[s S975 . 1 `uc 1 T1GSS0 1 0 :1:0 
 `uc 1 T1GSS1 1 0 :1:1 
 `uc 1 T1GVAL 1 0 :1:2 
 `uc 1 T1GGO_nDONE 1 0 :1:3 
@@ -304,12 +303,12 @@ I2C_NULL 5
 `uc 1 TMR1GE 1 0 :1:7 
 ]
 "1042
-[s S1247 . 1 `uc 1 T1GSS 1 0 :2:0 
+[s S984 . 1 `uc 1 T1GSS 1 0 :2:0 
 `uc 1 . 1 0 :1:2 
 `uc 1 T1GGO 1 0 :1:3 
 ]
-[u S1251 . 1 `S1238 1 . 1 0 `S1247 1 . 1 0 ]
-[v _T1GCONbits T1GCONbits `VES1251  1 e 1 @25 ]
+[u S988 . 1 `S975 1 . 1 0 `S984 1 . 1 0 ]
+[v _T1GCONbits T1GCONbits `VES988  1 e 1 @25 ]
 "1308
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1370
@@ -320,7 +319,7 @@ I2C_NULL 5
 [v _TRISD TRISD `VEuc  1 e 1 @143 ]
 "1556
 [v _TRISE TRISE `VEuc  1 e 1 @144 ]
-[s S171 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S589 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -330,9 +329,9 @@ I2C_NULL 5
 `uc 1 TMR1GIE 1 0 :1:7 
 ]
 "1611
-[u S180 . 1 `S171 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES180  1 e 1 @145 ]
-[s S38 . 1 `uc 1 PS0 1 0 :1:0 
+[u S598 . 1 `S589 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES598  1 e 1 @145 ]
+[s S169 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 `uc 1 PSA 1 0 :1:3 
@@ -342,13 +341,13 @@ I2C_NULL 5
 `uc 1 nWPUEN 1 0 :1:7 
 ]
 "1782
-[s S47 . 1 `uc 1 PS 1 0 :3:0 
+[s S178 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 ]
-[u S52 . 1 `S38 1 . 1 0 `S47 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES52  1 e 1 @149 ]
+[u S183 . 1 `S169 1 . 1 0 `S178 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES183  1 e 1 @149 ]
 "1893
 [v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
 "1952
@@ -359,7 +358,7 @@ I2C_NULL 5
 [v _LATA LATA `VEuc  1 e 1 @268 ]
 "2414
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-[s S236 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S1127 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -369,8 +368,8 @@ I2C_NULL 5
 `uc 1 LATB7 1 0 :1:7 
 ]
 "2431
-[u S245 . 1 `S236 1 . 1 0 ]
-[v _LATBbits LATBbits `VES245  1 e 1 @269 ]
+[u S1136 . 1 `S1127 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1136  1 e 1 @269 ]
 "2476
 [v _LATC LATC `VEuc  1 e 1 @270 ]
 "2538
@@ -399,7 +398,7 @@ I2C_NULL 5
 [v _SSPADD SSPADD `VEuc  1 e 1 @530 ]
 "4209
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @532 ]
-[s S821 . 1 `uc 1 BF 1 0 :1:0 
+[s S568 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -409,11 +408,11 @@ I2C_NULL 5
 `uc 1 SMP 1 0 :1:7 
 ]
 "4226
-[u S830 . 1 `S821 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES830  1 e 1 @532 ]
+[u S577 . 1 `S568 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES577  1 e 1 @532 ]
 "4271
 [v _SSPCON1 SSPCON1 `VEuc  1 e 1 @533 ]
-[s S614 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S361 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
@@ -423,13 +422,13 @@ I2C_NULL 5
 `uc 1 WCOL 1 0 :1:7 
 ]
 "4296
-[s S623 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S370 . 1 `uc 1 SSPM 1 0 :4:0 
 ]
-[u S625 . 1 `S614 1 . 1 0 `S623 1 . 1 0 ]
-[v _SSPCON1bits SSPCON1bits `VES625  1 e 1 @533 ]
+[u S372 . 1 `S361 1 . 1 0 `S370 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES372  1 e 1 @533 ]
 "4409
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @534 ]
-[s S779 . 1 `uc 1 SEN 1 0 :1:0 
+[s S526 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -439,61 +438,65 @@ I2C_NULL 5
 `uc 1 GCEN 1 0 :1:7 
 ]
 "4426
-[u S788 . 1 `S779 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES788  1 e 1 @534 ]
+[u S535 . 1 `S526 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES535  1 e 1 @534 ]
 "8883
 [v _PLLR PLLR `VEb  1 e 0 @1238 ]
-"55 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\main.c
+"55 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\main.c
 [v _time_out_timer time_out_timer `us  1 e 2 0 ]
-"56
-[v _flag_turn_on_light flag_turn_on_light `a  1 e 1 0 ]
-"30 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/ext_int.c
+[s S1071 flags 1 `uc 1 turn_on_light 1 0 :1:0 
+`uc 1 light_on 1 0 :1:1 
+`uc 1 turn_off_light 1 0 :1:2 
+]
+"60
+[v _FLAG FLAG `S1071  1 e 1 0 ]
+"30 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/ext_int.c
 [v _INT_InterruptHandler INT_InterruptHandler `*.37(v  1 e 2 0 ]
-"146 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/i2c_master.c
+"146 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/i2c_master.c
 [v _i2c_fsmStateTable i2c_fsmStateTable `DC[16]*.37(E3352  1 e 32 0 ]
-[s S588 . 29 `[6]*.37(E360 1 callbackTable 12 0 `[6]*.1v 1 callbackPayload 6 12 `us 1 time_out 2 18 `us 1 time_out_value 2 20 `uc 1 address 1 22 `*.4uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E3352 1 state 1 26 `E355 1 error 1 27 `uc 1 addressNackCheck 1 28 :1:0 
+[s S335 . 29 `[6]*.37(E360 1 callbackTable 12 0 `[6]*.1v 1 callbackPayload 6 12 `us 1 time_out 2 18 `us 1 time_out_value 2 20 `uc 1 address 1 22 `*.4uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E3352 1 state 1 26 `E355 1 error 1 27 `uc 1 addressNackCheck 1 28 :1:0 
 `uc 1 busy 1 28 :1:1 
 `uc 1 inUse 1 28 :1:2 
 `uc 1 bufferFree 1 28 :1:3 
 ]
 "165
-[v _I2C_Status I2C_Status `S588  1 e 29 0 ]
-"57 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/tmr1.c
+[v _I2C_Status I2C_Status `S335  1 e 29 0 ]
+"57 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
 "58
 [v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
-"94 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\main.c
+"100 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"159
+"173
 } 0
-"30 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\RGB_5050.c
+"30 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\RGB_5050.c
 [v _set_led_color set_led_color `(v  1 e 1 0 ]
 {
 [v set_led_color@number_led number_led `uc  1 a 1 wreg ]
 "51
-[v set_led_color@i_353 i `uc  1 a 1 8 ]
+[v set_led_color@i_1232 i `uc  1 a 1 4 ]
 "42
-[v set_led_color@i_352 i `uc  1 a 1 7 ]
+[v set_led_color@i_1231 i `uc  1 a 1 3 ]
 "33
-[v set_led_color@i i `uc  1 a 1 6 ]
+[v set_led_color@i i `uc  1 a 1 2 ]
 "32
-[v set_led_color@number_led_choose number_led_choose `uc  1 a 1 5 ]
+[v set_led_color@number_led_choose number_led_choose `uc  1 a 1 1 ]
 "30
 [v set_led_color@number_led number_led `uc  1 a 1 wreg ]
-[v set_led_color@red red `uc  1 p 1 0 ]
-[v set_led_color@green green `uc  1 p 1 1 ]
-[v set_led_color@blue blue `uc  1 p 1 2 ]
+[v set_led_color@red red `uc  1 p 1 2 ]
+[v set_led_color@green green `uc  1 p 1 3 ]
+[v set_led_color@blue blue `uc  1 p 1 4 ]
 "32
-[v set_led_color@number_led number_led `uc  1 a 1 4 ]
+[v set_led_color@number_led number_led `uc  1 a 1 0 ]
 "61
 } 0
-"93 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/tmr1.c
+"93 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/tmr1.c
 [v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
 {
 "97
 } 0
-"50 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/mcc.c
+"50 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "59
@@ -503,7 +506,7 @@ I2C_NULL 5
 {
 "79
 } 0
-"64 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/tmr1.c
+"64 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 {
 "91
@@ -511,25 +514,25 @@ I2C_NULL 5
 "171
 [v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
 "173
 } 0
-"55 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/pin_manager.c
+"55 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "101
 } 0
-"61 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/mcc.c
+"61 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "73
 } 0
-"167 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/i2c_master.c
+"167 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/i2c_master.c
 [v _I2C_Initialize I2C_Initialize `(v  1 e 1 0 ]
 {
 "174
 } 0
-"59 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/ext_int.c
+"59 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/ext_int.c
 [v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
 {
 "70
@@ -537,36 +540,15 @@ I2C_NULL 5
 "50
 [v _INT_SetInterruptHandler INT_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v INT_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+[v INT_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
 "52
 } 0
-"59 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\main.c
+"63 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\main.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
-"90
+"96
 } 0
-"30 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\RGB_5050.c
-[v i1_set_led_color set_led_color `(v  1 e 1 0 ]
-{
-[v i1set_led_color@number_led number_led `uc  1 a 1 wreg ]
-"51
-[v i1set_led_color@i_353 i `uc  1 a 1 8 ]
-"42
-[v i1set_led_color@i_352 i `uc  1 a 1 7 ]
-"33
-[v i1set_led_color@i i `uc  1 a 1 6 ]
-"32
-[v i1set_led_color@number_led_choose number_led_choose `uc  1 a 1 5 ]
-"30
-[v i1set_led_color@number_led number_led `uc  1 a 1 wreg ]
-[v i1set_led_color@red red `uc  1 p 1 0 ]
-[v i1set_led_color@green green `uc  1 p 1 1 ]
-[v i1set_led_color@blue blue `uc  1 p 1 2 ]
-"32
-[v i1set_led_color@number_led number_led `uc  1 a 1 4 ]
-"61
-} 0
-"99 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/tmr1.c
+"99 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/tmr1.c
 [v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]
 {
 "103
@@ -587,7 +569,7 @@ I2C_NULL 5
 {
 "178
 } 0
-"32 C:\Users\AlexisRamirez\MPLABXProjects\LED_5050_RGB.X\mcc_generated_files/ext_int.c
+"32 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/ext_int.c
 [v _INT_ISR INT_ISR `(v  1 e 1 0 ]
 {
 "38

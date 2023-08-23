@@ -53,7 +53,11 @@ color_led COLOR_LED[16];
 bool status_communication = false;
 BMP_180 DATA_BMP_180;
 uint16_t time_out_timer = 0;
-bool flag_turn_on_light = false;
+struct flags{
+    volatile bool turn_on_light:1;
+    volatile bool light_on:1;
+    volatile bool turn_off_light:1;
+}FLAG;
 
 // Interrupts
 void __interrupt() INTERRUPT_InterruptManager (void)
@@ -62,7 +66,9 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     if(INTCONbits.INTE == 1 && INTCONbits.INTF == 1)
     {
         INT_ISR();
-        flag_turn_on_light = true;
+        if(!FLAG.light_on){
+            FLAG.turn_on_light = true;
+        }
     }
     else if(INTCONbits.PEIE == 1)
     {
@@ -70,7 +76,7 @@ void __interrupt() INTERRUPT_InterruptManager (void)
         {
             TMR1_ISR();
             if(time_out_timer >= 1000){
-                set_led_color(16, 0, 0, 0);
+                FLAG.turn_off_light = true;
                 time_out_timer = 0;
                 TMR1_StopTimer();
             }
@@ -103,10 +109,10 @@ void main(void)
 //    INTERRUPT_GlobalInterruptEnable();
 
     // Enable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
 
     // Disable the Global Interrupts
-    //INTERRUPT_GlobalInterruptDisable();
+    INTERRUPT_GlobalInterruptDisable();
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
@@ -139,12 +145,20 @@ void main(void)
     
     while (1)
     {
-        if(flag_turn_on_light){
+        if(FLAG.turn_on_light && !FLAG.light_on){
             INTERRUPT_GlobalInterruptDisable();
             set_led_color(16, 255, 255, 255);
-            flag_turn_on_light = false;
             INTERRUPT_GlobalInterruptEnable();
+            FLAG.turn_on_light = false;
+            FLAG.light_on = true;
             TMR1_StartTimer();
+        }
+        if(FLAG.turn_off_light){
+            INTERRUPT_GlobalInterruptDisable();
+            set_led_color(16, 0, 0, 0);
+            INTERRUPT_GlobalInterruptEnable();
+            FLAG.light_on = false;
+            FLAG.turn_off_light = false;
         }
 //        status_communication = check_communication_BMP180();
 //        if(status_communication){
