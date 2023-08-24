@@ -72,9 +72,9 @@ I2C_NULL 5
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"63 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\main.c
+"64 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\main.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
-"100
+"101
 [v _main main `(v  1 e 1 0 ]
 "63 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/examples/i2c_master_example.c
 [v _I2C_Read1ByteRegister I2C_Read1ByteRegister `(uc  1 e 1 0 ]
@@ -465,7 +465,7 @@ I2C_NULL 5
 [v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
 "58
 [v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
-"100 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\main.c
+"101 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "173
@@ -475,9 +475,9 @@ I2C_NULL 5
 {
 [v set_led_color@number_led number_led `uc  1 a 1 wreg ]
 "51
-[v set_led_color@i_1232 i `uc  1 a 1 4 ]
+[v set_led_color@i_1233 i `uc  1 a 1 4 ]
 "42
-[v set_led_color@i_1231 i `uc  1 a 1 3 ]
+[v set_led_color@i_1232 i `uc  1 a 1 3 ]
 "33
 [v set_led_color@i i `uc  1 a 1 2 ]
 "32
@@ -543,10 +543,10 @@ I2C_NULL 5
 [v INT_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
 "52
 } 0
-"63 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\main.c
+"64 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\main.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
-"96
+"97
 } 0
 "99 C:\Users\acuic\Documents\Alexis Ivan Ramirez Ortiz\Alimentadores\LED_5050_RGB.X\mcc_generated_files/tmr1.c
 [v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]

@@ -58,6 +58,7 @@ struct flags{
     volatile bool light_on:1;
     volatile bool turn_off_light:1;
 }FLAG;
+color_led COLOR_LED[16];
 
 // Interrupts
 void __interrupt() INTERRUPT_InterruptManager (void)
@@ -117,7 +118,7 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
-    __delay_ms(1000);
+    __delay_ms(100);
     LED_ON;
     INTERRUPT_GlobalInterruptEnable();
 //    COLOR_LED[0].RGB.red = 255;
@@ -145,9 +146,10 @@ void main(void)
     
     while (1)
     {
-        if(FLAG.turn_on_light && !FLAG.light_on){
+//        if(FLAG.turn_on_light && !FLAG.light_on){
+        if(FLAG.turn_on_light){
             INTERRUPT_GlobalInterruptDisable();
-            set_led_color(16, 255, 255, 255);
+            set_led_color(16, 100, 100, 100);
             INTERRUPT_GlobalInterruptEnable();
             FLAG.turn_on_light = false;
             FLAG.light_on = true;
@@ -167,8 +169,6 @@ void main(void)
         
 //        DATA_BMP_180.temperature = get_temperature_BMP180();
 //        __delay_ms(5000);
-//        LATBbits.LATB5 = 1;
-//        LATBbits.LATB5 = 0;
     }
 }
 /**

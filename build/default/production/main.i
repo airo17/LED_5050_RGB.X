@@ -6119,6 +6119,7 @@ struct flags{
     volatile _Bool light_on:1;
     volatile _Bool turn_off_light:1;
 }FLAG;
+color_led COLOR_LED[16];
 
 
 void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
@@ -6162,7 +6163,7 @@ void main(void)
 {
 
     SYSTEM_Initialize();
-# 112 "main.c"
+# 113 "main.c"
     (INTCONbits.PEIE = 1);
 
 
@@ -6171,15 +6172,16 @@ void main(void)
 
 
 
-    _delay((unsigned long)((1000)*(32000000/4000.0)));
+    _delay((unsigned long)((100)*(32000000/4000.0)));
     LATBbits.LATB4 = 1;
     (INTCONbits.GIE = 1);
-# 146 "main.c"
+# 147 "main.c"
     while (1)
     {
-        if(FLAG.turn_on_light && !FLAG.light_on){
+
+        if(FLAG.turn_on_light){
             (INTCONbits.GIE = 0);
-            set_led_color(16, 255, 255, 255);
+            set_led_color(16, 100, 100, 100);
             (INTCONbits.GIE = 1);
             FLAG.turn_on_light = 0;
             FLAG.light_on = 1;
@@ -6192,6 +6194,12 @@ void main(void)
             FLAG.light_on = 0;
             FLAG.turn_off_light = 0;
         }
-# 172 "main.c"
+
+
+
+
+
+
+
     }
 }

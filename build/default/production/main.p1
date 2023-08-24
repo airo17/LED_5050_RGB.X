@@ -638,196 +638,199 @@ Version 4.0 HI-TECH Software Intermediate Code
 "60
 [; ;main.c: 60: }FLAG;
 [v _FLAG `S388 ~T0 @X0 1 e ]
+"61
+[; ;main.c: 61: color_led COLOR_LED[16];
+[v _COLOR_LED `S384 ~T0 @X0 -> 16 `i e ]
 [v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
-"63
-[; ;main.c: 63: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
-[v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
 "64
-[; ;main.c: 64: {
+[; ;main.c: 64: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
+[v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
+"65
+[; ;main.c: 65: {
 {
 [e :U _INTERRUPT_InterruptManager ]
 [f ]
-"66
-[; ;main.c: 66:     if(INTCONbits.INTE == 1 && INTCONbits.INTF == 1)
-[e $ ! && == -> . . _INTCONbits 0 4 `i -> 1 `i == -> . . _INTCONbits 0 1 `i -> 1 `i 390  ]
 "67
-[; ;main.c: 67:     {
-{
+[; ;main.c: 67:     if(INTCONbits.INTE == 1 && INTCONbits.INTF == 1)
+[e $ ! && == -> . . _INTCONbits 0 4 `i -> 1 `i == -> . . _INTCONbits 0 1 `i -> 1 `i 390  ]
 "68
-[; ;main.c: 68:         INT_ISR();
-[e ( _INT_ISR ..  ]
+[; ;main.c: 68:     {
+{
 "69
-[; ;main.c: 69:         if(!FLAG.light_on){
+[; ;main.c: 69:         INT_ISR();
+[e ( _INT_ISR ..  ]
+"70
+[; ;main.c: 70:         if(!FLAG.light_on){
 [e $ ! ! != -> . _FLAG 1 `i -> 0 `i 391  ]
 {
-"70
-[; ;main.c: 70:             FLAG.turn_on_light = 1;
-[e = . _FLAG 0 -> -> 1 `i `uc ]
 "71
-[; ;main.c: 71:         }
+[; ;main.c: 71:             FLAG.turn_on_light = 1;
+[e = . _FLAG 0 -> -> 1 `i `uc ]
+"72
+[; ;main.c: 72:         }
 }
 [e :U 391 ]
-"72
-[; ;main.c: 72:     }
+"73
+[; ;main.c: 73:     }
 }
 [e $U 392  ]
-"73
-[; ;main.c: 73:     else if(INTCONbits.PEIE == 1)
+"74
+[; ;main.c: 74:     else if(INTCONbits.PEIE == 1)
 [e :U 390 ]
 [e $ ! == -> . . _INTCONbits 0 6 `i -> 1 `i 393  ]
-"74
-[; ;main.c: 74:     {
-{
 "75
-[; ;main.c: 75:         if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
-[e $ ! && == -> . . _PIE1bits 0 0 `i -> 1 `i == -> . . _PIR1bits 0 0 `i -> 1 `i 394  ]
-"76
-[; ;main.c: 76:         {
+[; ;main.c: 75:     {
 {
+"76
+[; ;main.c: 76:         if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
+[e $ ! && == -> . . _PIE1bits 0 0 `i -> 1 `i == -> . . _PIR1bits 0 0 `i -> 1 `i 394  ]
 "77
-[; ;main.c: 77:             TMR1_ISR();
-[e ( _TMR1_ISR ..  ]
+[; ;main.c: 77:         {
+{
 "78
-[; ;main.c: 78:             if(time_out_timer >= 1000){
+[; ;main.c: 78:             TMR1_ISR();
+[e ( _TMR1_ISR ..  ]
+"79
+[; ;main.c: 79:             if(time_out_timer >= 1000){
 [e $ ! >= -> _time_out_timer `ui -> -> 1000 `i `ui 395  ]
 {
-"79
-[; ;main.c: 79:                 FLAG.turn_off_light = 1;
-[e = . _FLAG 2 -> -> 1 `i `uc ]
 "80
-[; ;main.c: 80:                 time_out_timer = 0;
-[e = _time_out_timer -> -> 0 `i `us ]
+[; ;main.c: 80:                 FLAG.turn_off_light = 1;
+[e = . _FLAG 2 -> -> 1 `i `uc ]
 "81
-[; ;main.c: 81:                 TMR1_StopTimer();
-[e ( _TMR1_StopTimer ..  ]
+[; ;main.c: 81:                 time_out_timer = 0;
+[e = _time_out_timer -> -> 0 `i `us ]
 "82
-[; ;main.c: 82:             }
+[; ;main.c: 82:                 TMR1_StopTimer();
+[e ( _TMR1_StopTimer ..  ]
+"83
+[; ;main.c: 83:             }
 }
 [e $U 396  ]
-"83
-[; ;main.c: 83:             else{
+"84
+[; ;main.c: 84:             else{
 [e :U 395 ]
 {
-"84
-[; ;main.c: 84:                 time_out_timer++;
-[e ++ _time_out_timer -> -> 1 `i `us ]
 "85
-[; ;main.c: 85:             }
+[; ;main.c: 85:                 time_out_timer++;
+[e ++ _time_out_timer -> -> 1 `i `us ]
+"86
+[; ;main.c: 86:             }
 }
 [e :U 396 ]
-"86
-[; ;main.c: 86:         }
+"87
+[; ;main.c: 87:         }
 }
 [e $U 397  ]
-"87
-[; ;main.c: 87:         else
-[e :U 394 ]
 "88
-[; ;main.c: 88:         {
+[; ;main.c: 88:         else
+[e :U 394 ]
+"89
+[; ;main.c: 89:         {
 {
-"90
-[; ;main.c: 90:         }
+"91
+[; ;main.c: 91:         }
 }
 [e :U 397 ]
-"91
-[; ;main.c: 91:     }
+"92
+[; ;main.c: 92:     }
 }
 [e $U 398  ]
-"92
-[; ;main.c: 92:     else
-[e :U 393 ]
 "93
-[; ;main.c: 93:     {
+[; ;main.c: 93:     else
+[e :U 393 ]
+"94
+[; ;main.c: 94:     {
 {
-"95
-[; ;main.c: 95:     }
+"96
+[; ;main.c: 96:     }
 }
 [e :U 398 ]
 [e :U 392 ]
-"96
-[; ;main.c: 96: }
+"97
+[; ;main.c: 97: }
 [e :UE 389 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"100
-[; ;main.c: 100: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
 "101
-[; ;main.c: 101: {
+[; ;main.c: 101: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"102
+[; ;main.c: 102: {
 {
 [e :U _main ]
 [f ]
-"103
-[; ;main.c: 103:     SYSTEM_Initialize();
+"104
+[; ;main.c: 104:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"112
-[; ;main.c: 112:     (INTCONbits.PEIE = 1);
+"113
+[; ;main.c: 113:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"115
-[; ;main.c: 115:     (INTCONbits.GIE = 0);
+"116
+[; ;main.c: 116:     (INTCONbits.GIE = 0);
 [e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
-"120
-[; ;main.c: 120:     _delay((unsigned long)((1000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "121
-[; ;main.c: 121:     LATBbits.LATB4 = 1;
-[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 121:     _delay((unsigned long)((100)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "122
-[; ;main.c: 122:     (INTCONbits.GIE = 1);
+[; ;main.c: 122:     LATBbits.LATB4 = 1;
+[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
+"123
+[; ;main.c: 123:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"146
-[; ;main.c: 146:     while (1)
-[e :U 401 ]
 "147
-[; ;main.c: 147:     {
-{
+[; ;main.c: 147:     while (1)
+[e :U 401 ]
 "148
-[; ;main.c: 148:         if(FLAG.turn_on_light && !FLAG.light_on){
-[e $ ! && != -> . _FLAG 0 `i -> 0 `i ! != -> . _FLAG 1 `i -> 0 `i 403  ]
+[; ;main.c: 148:     {
 {
-"149
-[; ;main.c: 149:             (INTCONbits.GIE = 0);
-[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
 "150
-[; ;main.c: 150:             set_led_color(16, 255, 255, 255);
-[e ( _set_led_color (4 , , , -> -> 16 `i `uc -> -> 255 `i `uc -> -> 255 `i `uc -> -> 255 `i `uc ]
+[; ;main.c: 150:         if(FLAG.turn_on_light){
+[e $ ! != -> . _FLAG 0 `i -> 0 `i 403  ]
+{
 "151
-[; ;main.c: 151:             (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 151:             (INTCONbits.GIE = 0);
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
 "152
-[; ;main.c: 152:             FLAG.turn_on_light = 0;
-[e = . _FLAG 0 -> -> 0 `i `uc ]
+[; ;main.c: 152:             set_led_color(16, 100, 100, 100);
+[e ( _set_led_color (4 , , , -> -> 16 `i `uc -> -> 100 `i `uc -> -> 100 `i `uc -> -> 100 `i `uc ]
 "153
-[; ;main.c: 153:             FLAG.light_on = 1;
-[e = . _FLAG 1 -> -> 1 `i `uc ]
+[; ;main.c: 153:             (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "154
-[; ;main.c: 154:             TMR1_StartTimer();
-[e ( _TMR1_StartTimer ..  ]
+[; ;main.c: 154:             FLAG.turn_on_light = 0;
+[e = . _FLAG 0 -> -> 0 `i `uc ]
 "155
-[; ;main.c: 155:         }
+[; ;main.c: 155:             FLAG.light_on = 1;
+[e = . _FLAG 1 -> -> 1 `i `uc ]
+"156
+[; ;main.c: 156:             TMR1_StartTimer();
+[e ( _TMR1_StartTimer ..  ]
+"157
+[; ;main.c: 157:         }
 }
 [e :U 403 ]
-"156
-[; ;main.c: 156:         if(FLAG.turn_off_light){
+"158
+[; ;main.c: 158:         if(FLAG.turn_off_light){
 [e $ ! != -> . _FLAG 2 `i -> 0 `i 404  ]
 {
-"157
-[; ;main.c: 157:             (INTCONbits.GIE = 0);
-[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
-"158
-[; ;main.c: 158:             set_led_color(16, 0, 0, 0);
-[e ( _set_led_color (4 , , , -> -> 16 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
 "159
-[; ;main.c: 159:             (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 159:             (INTCONbits.GIE = 0);
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
 "160
-[; ;main.c: 160:             FLAG.light_on = 0;
-[e = . _FLAG 1 -> -> 0 `i `uc ]
+[; ;main.c: 160:             set_led_color(16, 0, 0, 0);
+[e ( _set_led_color (4 , , , -> -> 16 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
 "161
-[; ;main.c: 161:             FLAG.turn_off_light = 0;
-[e = . _FLAG 2 -> -> 0 `i `uc ]
+[; ;main.c: 161:             (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "162
-[; ;main.c: 162:         }
+[; ;main.c: 162:             FLAG.light_on = 0;
+[e = . _FLAG 1 -> -> 0 `i `uc ]
+"163
+[; ;main.c: 163:             FLAG.turn_off_light = 0;
+[e = . _FLAG 2 -> -> 0 `i `uc ]
+"164
+[; ;main.c: 164:         }
 }
 [e :U 404 ]
 "172
