@@ -25,34 +25,58 @@
  */
 #include "BH1750.h"
 
-bool power_on_BH1750(void){
-    uint8_t comand = COMAND_POWER_ON;
-    bool flag_conect = false;
-    
-    flag_conect = SERCOM0_I2C_Write(BH1750_ADDRESS, &comand, 1);
-
-    while(SERCOM0_I2C_IsBusy());
-    
-    return flag_conect;
+void power_on_BH1750(void){
+    I2C_WriteNBytes(BH1750_ADDRESS, COMAND_POWER_ON, 1);
 }
 
-bool continuously_H_resolution_Mode2_BH1750(void){
-    uint8_t comand = COMAND_C_H_RESOLUTION_MODE2;
-    bool flag_conect = false;
-    
-    flag_conect = SERCOM0_I2C_Write(BH1750_ADDRESS, &comand, 1);
+void power_down_BH1750(void){
+    I2C_WriteNBytes(BH1750_ADDRESS, COMAND_POWER_DOWN, 1);
+}
 
-    while(SERCOM0_I2C_IsBusy());
+void reset_BH1750(void){
+    I2C_WriteNBytes(BH1750_ADDRESS, COMAND_POWER_RESET, 1);
+}
+
+void continuously_H_resolution_Mode_BH1750(void){
+    I2C_WriteNBytes(BH1750_ADDRESS, COMAND_C_H_RESOLUTION_MODE, 1);
+}
+
+void continuously_H_resolution_Mode2_BH1750(void){
+    I2C_WriteNBytes(BH1750_ADDRESS, COMAND_C_H_RESOLUTION_MODE2, 1);
+}
+
+void continuously_L_resolution_Mode_BH1750(void){
+    I2C_WriteNBytes(BH1750_ADDRESS, COMAND_C_L_RESOLUTION_MODE, 1);
+}
+
+void one_time_H_resolution_Mode_BH1750(bool power_on_first){
+    if(power_on_first){
+        power_on_BH1750();
+    }
     
-    return flag_conect;
+    I2C_WriteNBytes(BH1750_ADDRESS, COMAND_OT_H_RESOLUTION_MODE, 1);
+}
+
+void one_time_H_resolution_Mode2_BH1750(bool power_on_first){
+    if(power_on_first){
+        power_on_BH1750();
+    }
+    
+    I2C_WriteNBytes(BH1750_ADDRESS, COMAND_OT_H_RESOLUTION_MODE2, 1);
+}
+
+void one_time_L_resolution_Mode_BH1750(bool power_on_first){
+    if(power_on_first){
+        power_on_BH1750();
+    }
+    
+    I2C_WriteNBytes(BH1750_ADDRESS, COMAND_OT_L_RESOLUTION_MODE, 1);
 }
 
 uint16_t read_result_BH1750(void){
     uint8_t result[2] = {0};
     
-    SERCOM0_I2C_Read(BH1750_ADDRESS, &result[0], 2);
-
-    while(SERCOM0_I2C_IsBusy());
+    I2C_ReadNBytes(BH1750_ADDRESS, &result[0], 2);
     
     return ((result[0] << 8) | result[1]) / 1.2;
 }
