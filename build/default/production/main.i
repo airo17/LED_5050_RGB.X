@@ -6110,6 +6110,8 @@ _Bool check_communication_BMP180(void);
 
 
 
+
+
 color_led COLOR_LED[16];
 _Bool status_communication = 0;
 BMP_180 DATA_BMP_180;
@@ -6131,6 +6133,7 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
         if(!FLAG.light_on){
             FLAG.turn_on_light = 1;
         }
+        time_out_timer = 0;
     }
     else if(INTCONbits.PEIE == 1)
     {
@@ -6163,7 +6166,7 @@ void main(void)
 {
 
     SYSTEM_Initialize();
-# 113 "main.c"
+# 116 "main.c"
     (INTCONbits.PEIE = 1);
 
 
@@ -6175,13 +6178,18 @@ void main(void)
     _delay((unsigned long)((100)*(32000000/4000.0)));
     LATBbits.LATB4 = 1;
     (INTCONbits.GIE = 1);
-# 147 "main.c"
+# 150 "main.c"
     while (1)
     {
-
+        if(PORTBbits.RB1 == 1){
+            if(!FLAG.light_on){
+                FLAG.turn_on_light = 1;
+            }
+            time_out_timer = 0;
+        }
         if(FLAG.turn_on_light){
             (INTCONbits.GIE = 0);
-            set_led_color(16, 100, 100, 100);
+            set_led_color(16, 255, 255, 255);
             (INTCONbits.GIE = 1);
             FLAG.turn_on_light = 0;
             FLAG.light_on = 1;
@@ -6189,7 +6197,7 @@ void main(void)
         }
         if(FLAG.turn_off_light){
             (INTCONbits.GIE = 0);
-            set_led_color(16, 0, 0, 0);
+            set_led_color(16, 255, 255, 255);
             (INTCONbits.GIE = 1);
             FLAG.light_on = 0;
             FLAG.turn_off_light = 0;

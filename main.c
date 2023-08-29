@@ -49,6 +49,8 @@
 #define LED_OFF LATBbits.LATB4 = 0
 #define LED_TOGGLE LATBbits.LATB4 ^= 1
 
+#define SECOND_MOTION_DETECTOR_SENSOR PORTBbits.RB1
+
 color_led COLOR_LED[16];
 bool status_communication = false;
 BMP_180 DATA_BMP_180;
@@ -70,6 +72,7 @@ void __interrupt() INTERRUPT_InterruptManager (void)
         if(!FLAG.light_on){
             FLAG.turn_on_light = true;
         }
+        time_out_timer = 0;
     }
     else if(INTCONbits.PEIE == 1)
     {
@@ -146,10 +149,15 @@ void main(void)
     
     while (1)
     {
-//        if(FLAG.turn_on_light && !FLAG.light_on){
+        if(SECOND_MOTION_DETECTOR_SENSOR == 1){
+            if(!FLAG.light_on){
+                FLAG.turn_on_light = true;
+            }
+            time_out_timer = 0;
+        }
         if(FLAG.turn_on_light){
             INTERRUPT_GlobalInterruptDisable();
-            set_led_color(16, 100, 100, 100);
+            set_led_color(16, 255, 255, 255);
             INTERRUPT_GlobalInterruptEnable();
             FLAG.turn_on_light = false;
             FLAG.light_on = true;
@@ -157,7 +165,7 @@ void main(void)
         }
         if(FLAG.turn_off_light){
             INTERRUPT_GlobalInterruptDisable();
-            set_led_color(16, 0, 0, 0);
+            set_led_color(16, 255, 255, 255);
             INTERRUPT_GlobalInterruptEnable();
             FLAG.light_on = false;
             FLAG.turn_off_light = false;
