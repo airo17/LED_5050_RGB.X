@@ -4,7 +4,7 @@ __S3 0 0 ABS 0
 __Hintentry 43 0 CODE 0
 __Lintentry 4 0 CODE 0
 __pintentry 4 0 CODE 0
-set_led_color@number_led D8 0 BANK1 1
+set_led_color@number_led 69 0 BANK0 1
 set_led_color@green 73 0 COMMON 1
 _TMR1_DefaultInterruptHandler 223 0 CODE 0
 _FLAG 7B 0 COMMON 1
@@ -80,7 +80,7 @@ __Hsfr0 0 0 ABS 0
 __Lsfr0 0 0 ABS 0
 __Hsfr1 0 0 ABS 0
 __Lsfr1 0 0 ABS 0
-_time_out_timer 65 0 BANK0 1
+_time_out_timer 62 0 BANK0 1
 __Hsfr2 0 0 ABS 0
 __Lsfr2 0 0 ABS 0
 __Hsfr3 0 0 ABS 0
@@ -105,9 +105,12 @@ __end_of_EXT_INT_Initialize 1F9 0 CODE 0
 __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
 _i2c_fsmStateTable 162 0 STRCODE 0
-set_led_color@i DA 0 BANK1 1
+set_led_color@i 6B 0 BANK0 1
 __Hheap 0 0 HEAP 7
 __Lheap 0 0 HEAP 7
+__HcstackBANK0 0 0 ABS 0
+__LcstackBANK0 0 0 ABS 0
+__pcstackBANK0 69 0 BANK0 1
 __Hinit 43 0 CODE 0
 __Linit 43 0 CODE 0
 __end_of_main 140 0 CODE 0
@@ -217,15 +220,12 @@ __ptext5 182 0 CODE 0
 _I2C_DO_SEND_ADR_READ 0 0 ABS 0
 __ptext6 208 0 CODE 0
 __ptext7 140 0 CODE 0
-__HcstackBANK1 0 0 ABS 0
-__LcstackBANK1 0 0 ABS 0
 __ptext8 1E1 0 CODE 0
 _I2C_DO_RCEN 0 0 ABS 0
 __ptext9 1F9 0 CODE 0
-__pcstackBANK1 D8 0 BANK1 1
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
-_TMR1_InterruptHandler 67 0 BANK0 1
+_TMR1_InterruptHandler 64 0 BANK0 1
 __end_of__initialization 60 0 CODE 0
 _I2C_DO_SEND_ADR_WRITE 0 0 ABS 0
 _INT_DefaultInterruptHandler 224 0 CODE 0
@@ -258,8 +258,8 @@ __end_of_TMR1_WriteTimer 1D4 0 CODE 0
 __end_of_TMR1_StartTimer 220 0 CODE 0
 _I2C_CallbackReturnStop 0 0 ABS 0
 clear_ram0 202 0 CODE 0
-set_led_color@i_1261 DB 0 BANK1 1
-set_led_color@i_1262 DC 0 BANK1 1
+set_led_color@i_1261 6C 0 BANK0 1
+set_led_color@i_1262 6D 0 BANK0 1
 __HbssBANK0 0 0 ABS 0
 __LbssBANK0 0 0 ABS 0
 __Hbank10 0 0 BANK10 1
@@ -284,7 +284,7 @@ __Hbank22 0 0 BANK22 1
 __Lbank22 0 0 BANK22 1
 __Hbank13 0 0 BANK13 1
 __Lbank13 0 0 BANK13 1
-set_led_color@number_led_choose D9 0 BANK1 1
+set_led_color@number_led_choose 6A 0 BANK0 1
 __HbssBANK1 0 0 ABS 0
 __LbssBANK1 0 0 ABS 0
 __Hbank23 0 0 BANK23 1
@@ -369,55 +369,55 @@ _I2C_CallbackReturnReset 0 0 ABS 0
 _I2C_DO_SEND_STOP 0 0 ABS 0
 __initialization 45 0 CODE 0
 __end_of_i2c_fsmStateTable 182 0 STRCODE 0
-_INT_InterruptHandler 69 0 BANK0 1
+_INT_InterruptHandler 66 0 BANK0 1
 _I2C_DO_SEND_RESTART_WRITE 0 0 ABS 0
 %segments
 reset_vec 0 3 CODE 0 0
 intentry 8 2C3 CODE 8 0
 cstackCOMMON 70 7B COMMON 70 1
-bssBANK0 20 6B BANK0 20 1
+bssBANK0 20 6D BANK0 20 1
 bssBANK2 120 15F BANK2 120 1
-bssBANK1 A0 DC BANK1 A0 1
+bssBANK1 A0 DD BANK1 A0 1
 stringtext1 2C4 303 STRCODE 2C4 0
 text5 304 449 CODE 304 0
 %locals
 dist/default/production\LED_5050_RGB.X.production.o
-C:\Users\acuic\AppData\Local\Temp\xcAsdjk.s
-3863 45 0 CODE 0
-3866 45 0 CODE 0
-3932 45 0 CODE 0
-3933 46 0 CODE 0
-3934 47 0 CODE 0
-3938 48 0 CODE 0
-3939 49 0 CODE 0
-3940 4A 0 CODE 0
-3941 4B 0 CODE 0
-3942 4C 0 CODE 0
-3943 4D 0 CODE 0
-3947 50 0 CODE 0
-3948 51 0 CODE 0
-3949 52 0 CODE 0
-3950 53 0 CODE 0
-3951 54 0 CODE 0
-3952 55 0 CODE 0
-3956 58 0 CODE 0
-3957 59 0 CODE 0
-3958 5A 0 CODE 0
-3959 5B 0 CODE 0
-3960 5C 0 CODE 0
-3961 5D 0 CODE 0
-3967 60 0 CODE 0
-3969 60 0 CODE 0
-3970 61 0 CODE 0
-3971 62 0 CODE 0
-3921 202 0 CODE 0
-3922 202 0 CODE 0
-3923 203 0 CODE 0
-3924 203 0 CODE 0
-3925 204 0 CODE 0
-3926 205 0 CODE 0
-3927 206 0 CODE 0
-3928 207 0 CODE 0
+C:\Users\acuic\AppData\Local\Temp\xcAse20.s
+4213 45 0 CODE 0
+4216 45 0 CODE 0
+4285 45 0 CODE 0
+4286 46 0 CODE 0
+4287 47 0 CODE 0
+4291 48 0 CODE 0
+4292 49 0 CODE 0
+4293 4A 0 CODE 0
+4294 4B 0 CODE 0
+4295 4C 0 CODE 0
+4296 4D 0 CODE 0
+4300 50 0 CODE 0
+4301 51 0 CODE 0
+4302 52 0 CODE 0
+4303 53 0 CODE 0
+4304 54 0 CODE 0
+4305 55 0 CODE 0
+4309 58 0 CODE 0
+4310 59 0 CODE 0
+4311 5A 0 CODE 0
+4312 5B 0 CODE 0
+4313 5C 0 CODE 0
+4314 5D 0 CODE 0
+4320 60 0 CODE 0
+4322 60 0 CODE 0
+4323 61 0 CODE 0
+4324 62 0 CODE 0
+4274 202 0 CODE 0
+4275 202 0 CODE 0
+4276 203 0 CODE 0
+4277 203 0 CODE 0
+4278 204 0 CODE 0
+4279 205 0 CODE 0
+4280 206 0 CODE 0
+4281 207 0 CODE 0
 main.c
 104 EA 0 CODE 0
 107 EA 0 CODE 0

@@ -5,11 +5,9 @@
         <group>
             <file>file:/C:/Users/acuic/Documents/Alexis%20Ivan%20Ramirez%20Ortiz/Alimentadores/LED_5050_RGB.X/RGB_5050.c</file>
             <file>file:/C:/Users/acuic/Documents/Alexis%20Ivan%20Ramirez%20Ortiz/Alimentadores/LED_5050_RGB.X/RGB_5050.h</file>
-            <file>file:/C:/Users/acuic/Documents/Alexis%20Ivan%20Ramirez%20Ortiz/Alimentadores/LED_5050_RGB.X/mcc_generated_files/tmr1.h</file>
-            <file>file:/C:/Users/acuic/Documents/Alexis%20Ivan%20Ramirez%20Ortiz/Alimentadores/LED_5050_RGB.X/mcc_generated_files/mcc.c</file>
-            <file>file:/C:/Users/acuic/Documents/Alexis%20Ivan%20Ramirez%20Ortiz/Alimentadores/LED_5050_RGB.X/mcc_generated_files/ext_int.c</file>
-            <file>file:/C:/Users/acuic/Documents/Alexis%20Ivan%20Ramirez%20Ortiz/Alimentadores/LED_5050_RGB.X/mcc_generated_files/ext_int.h</file>
             <file>file:/C:/Users/acuic/Documents/Alexis%20Ivan%20Ramirez%20Ortiz/Alimentadores/LED_5050_RGB.X/main.c</file>
+            <file>file:/C:/Users/acuic/Documents/Alexis%20Ivan%20Ramirez%20Ortiz/Alimentadores/LED_5050_RGB.X/BH1750.c</file>
+            <file>file:/C:/Users/acuic/Documents/Alexis%20Ivan%20Ramirez%20Ortiz/Alimentadores/LED_5050_RGB.X/BH1750.h</file>
         </group>
     </open-files>
 </project-private>

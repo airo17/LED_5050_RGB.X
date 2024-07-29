@@ -5,9 +5,9 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.36\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\LED_5050_RGB.X.production.sym \
   --cmf=dist/default/production\LED_5050_RGB.X.production.cmf -z -Q16F1937 \
-  -oC:\Users\acuic\AppData\Local\Temp\xcAsdjk.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\acuic\AppData\Local\Temp\xcAse20.4 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/LED_5050_RGB.X.production.map \
-  --md=C:\Users\acuic\AppData\Local\Temp\xcAsdjk.dat -E1 -ver=XC8 Compiler \
+  --md=C:\Users\acuic\AppData\Local\Temp\xcAse20.dat -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
   -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh \
   -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh -ABANK2=0120h-016Fh \
@@ -30,7 +30,7 @@ Linker command line:
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE \
   -pcinit=CODE -pfunctab=ENTRY -k \
-  C:\Users\acuic\AppData\Local\Temp\xcAsdjk.o \
+  C:\Users\acuic\AppData\Local\Temp\xcAse20.o \
   dist/default/production\LED_5050_RGB.X.production.o 
 
 Object code version is 3.11
@@ -40,7 +40,7 @@ Machine type is 16F1937
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\acuic\AppData\Local\Temp\xcAsdjk.o
+C:\Users\acuic\AppData\Local\Temp\xcAse20.o
                 end_init                             43       43        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2        0       4
@@ -69,12 +69,12 @@ dist/default/production\LED_5050_RGB.X.production.o
                 text2                               21D      21D        3      304       0
                 text1                                64       64       86        8       0
                 maintext                             EA       EA       56        8       0
+                cstackBANK0                          69       69        5       20       1
                 cstackCOMMON                         70       70        9       70       1
-                cstackBANK1                          D8       D8        5       A0       1
                 clrtext                             202      202        6      304       0
                 bssBANK2                            120      120       40      120       1
-                bssBANK1                             A0       A0       38       A0       1
-                bssBANK0                             20       20       4C       20       1
+                bssBANK1                             A0       A0       3E       A0       1
+                bssBANK0                             20       20       49       20       1
                 bssCOMMON                            79       79        3       70       1
                 stringtext1                         162      162       20      2C4       0
 
@@ -119,11 +119,11 @@ TOTAL           Name                               Link     Load   Length     Sp
                 bssCOMMON                            79       79        3         1
 
         CLASS   BANK0          
-                bssBANK0                             20       20       4C         1
+                cstackBANK0                          69       69        5         1
+                bssBANK0                             20       20       49         1
 
         CLASS   BANK1          
-                cstackBANK1                          D8       D8        5         1
-                bssBANK1                             A0       A0       38         1
+                bssBANK1                             A0       A0       3E         1
 
         CLASS   BANK2          
                 bssBANK2                            120      120       40         1
@@ -275,9 +275,9 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000002  000002         0       0  CODE        2
                 intentry                       000004  00015E  000162         8       0  CODE        2
-                bssBANK0                       000020  00004C  00006C        20       1  BANK0       1
+                bssBANK0                       000020  00004E  00006E        20       1  BANK0       1
                 cstackCOMMON                   000070  00000C  00007C        70       1  COMMON      1
-                bssBANK1                       0000A0  00003D  0000DD        A0       1  BANK1       1
+                bssBANK1                       0000A0  00003E  0000DE        A0       1  BANK1       1
                 bssBANK2                       000120  000040  000160       120       1  BANK2       1
                 stringtext1                    000162  000020  000182       2C4       0  STRCODE     2
                 text5                          000182  0000A3  000225       304       0  CODE        2
@@ -286,8 +286,8 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            0006C-0006F               4           1
-        BANK1            000DD-000EF              13           1
+        BANK0            0006E-0006F               2           1
+        BANK1            000DE-000EF              12           1
         BANK2            00160-0016F              10           1
         BANK3            001A0-001EF              50           1
         BANK4            00220-0026F              50           1
@@ -302,8 +302,8 @@ UNUSED ADDRESS RANGES
         EEDATA           0F000-0F0FF             100           2
         ENTRY            00002-00003               2           2
                          00225-01FFF             100
-        RAM              0006C-0006F               4           1
-                         000DD-000EF              13
+        RAM              0006E-0006F               2           1
+                         000DE-000EF              12
                          00160-0016F              10
                          001A0-001EF              50
                          00220-0026F              50
@@ -385,7 +385,7 @@ _INTERRUPT_InterruptManager               intentry     00004
 _INT_CallBack                             text18       001D4
 _INT_DefaultInterruptHandler              text19       00224
 _INT_ISR                                  text17       00214
-_INT_InterruptHandler                     bssBANK0     00069
+_INT_InterruptHandler                     bssBANK0     00066
 _INT_SetInterruptHandler                  text11       0020E
 _LATA                                     (abs)        0010C
 _LATB                                     (abs)        0010D
@@ -421,7 +421,7 @@ _TMR1L                                    (abs)        00016
 _TMR1_DefaultInterruptHandler             text16       00223
 _TMR1_ISR                                 text14       0019A
 _TMR1_Initialize                          text5        00182
-_TMR1_InterruptHandler                    bssBANK0     00067
+_TMR1_InterruptHandler                    bssBANK0     00064
 _TMR1_SetInterruptHandler                 text6        00208
 _TMR1_StartTimer                          text2        0021D
 _TMR1_StopTimer                           text13       00220
@@ -478,7 +478,7 @@ __Hclrtext                                clrtext      00000
 __Hcode                                   code         00000
 __Hcommon                                 common       00000
 __Hconfig                                 config       08009
-__HcstackBANK1                            cstackBANK1  00000
+__HcstackBANK0                            cstackBANK0  00000
 __HcstackCOMMON                           cstackCOMMON 00000
 __Heeprom_data                            eeprom_data  00000
 __Hend_init                               end_init     00045
@@ -575,7 +575,7 @@ __Lclrtext                                clrtext      00000
 __Lcode                                   code         00000
 __Lcommon                                 common       00000
 __Lconfig                                 config       00000
-__LcstackBANK1                            cstackBANK1  00000
+__LcstackBANK0                            cstackBANK0  00000
 __LcstackCOMMON                           cstackCOMMON 00000
 __Leeprom_data                            eeprom_data  00000
 __Lend_init                               end_init     00043
@@ -666,7 +666,7 @@ __pbssBANK0                               bssBANK0     00020
 __pbssBANK1                               bssBANK1     000A0
 __pbssBANK2                               bssBANK2     00120
 __pbssCOMMON                              bssCOMMON    00079
-__pcstackBANK1                            cstackBANK1  000D8
+__pcstackBANK0                            cstackBANK0  00069
 __pcstackCOMMON                           cstackCOMMON 00070
 __pintentry                               intentry     00004
 __pmaintext                               maintext     000EA
@@ -695,7 +695,7 @@ _rd1RegCompleteHandler                    (abs)        00000
 _rd2RegCompleteHandler                    (abs)        00000
 _rdBlkRegCompleteHandler                  (abs)        00000
 _set_led_color                            text1        00064
-_time_out_timer                           bssBANK0     00065
+_time_out_timer                           bssBANK0     00062
 _timer1ReloadVal                          bssCOMMON    00079
 _wr1RegCompleteHandler                    (abs)        00000
 _wr2RegCompleteHandler                    (abs)        00000
@@ -712,11 +712,11 @@ intlevel5                                 functab      00000
 reset_vec                                 reset_vec    00000
 set_led_color@blue                        cstackCOMMON 00074
 set_led_color@green                       cstackCOMMON 00073
-set_led_color@i                           cstackBANK1  000DA
-set_led_color@i_1261                      cstackBANK1  000DB
-set_led_color@i_1262                      cstackBANK1  000DC
-set_led_color@number_led                  cstackBANK1  000D8
-set_led_color@number_led_choose           cstackBANK1  000D9
+set_led_color@i                           cstackBANK0  0006B
+set_led_color@i_1261                      cstackBANK0  0006C
+set_led_color@i_1262                      cstackBANK0  0006D
+set_led_color@number_led                  cstackBANK0  00069
+set_led_color@number_led_choose           cstackBANK0  0006A
 set_led_color@red                         cstackCOMMON 00072
 start                                     init         00043
 start_initialization                      cinit        00045
